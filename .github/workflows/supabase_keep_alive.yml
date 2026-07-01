@@ -1,0 +1,54 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    # Berjalan setiap 3 hari sekali pukul 00.00 UTC (Bisa disesuaikan)
+    - cron: '0 0 */3 * *'
+  workflow_dispatch: # Mengizinkan trigger manual dari tab Actions di GitHub
+
+jobs:
+  keep_alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Projects
+        env:
+          PROJECTS_JSON: ${{ secrets.SUPABASE_PROJECTS_JSON }}
+        run: |
+          if [ -z "$PROJECTS_JSON" ]; then
+            echo "Error: GitHub Secret 'SUPABASE_PROJECTS_JSON' tidak ditemukan atau kosong!"
+            exit 1
+          fi
+
+          # Flag untuk melacak kegagalan
+          failed=false
+
+          # Looping setiap project dalam array JSON
+          echo "$PROJECTS_JSON" | jq -c '.[]' | while read -r project; do
+            # Mengambil url dan anon_key
+            url=$(echo "$project" | jq -r '.url')
+            anon_key=$(echo "$project" | jq -r '.anon_key')
+            name=$(echo "$project" | jq -r '.name // "Unnamed Project"')
+
+            # Menghapus slash di akhir URL jika ada
+            url="${url%/}"
+
+            echo "Mencoba ping project: $name ($url)..."
+
+            # Mengirimkan request ke REST API v1 Supabase
+            response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "$url/rest/v1/" \
+              -H "apikey: $anon_key" \
+              -H "Authorization: Bearer $anon_key")
+
+            # Status 200 OK berarti request berhasil diterima oleh PostgREST dan database aktif
+            if [ "$response" -eq 200 ] || [ "$response" -eq 204 ]; then
+              echo "✅ Berhasil ping $name! Response HTTP: $response"
+            else
+              echo "❌ Gagal ping $name! Response HTTP: $response"
+              failed=true
+            fi
+          done
+
+          if [ "$failed" = true ]; then
+            echo "Beberapa project gagal di-ping. Silakan periksa kembali konfigurasi URL dan Anon Key Anda."
+            exit 1
+          fi

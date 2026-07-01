@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-06-22T05:30:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="usecase-diagram" name="Page-1">
+    <mxGraphModel dx="1200" dy="2200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Batas Sistem (System Boundary) -->
+        <mxCell id="boundary" value="BATAS SISTEM (MPO LEMEZZ APP)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;verticalAlign=top;fontStyle=1;spacingTop=10;fontSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="250" y="130" width="700" height="2010" as="geometry" />
+        </mxCell>
+        
+        <!-- Actors -->
+        <mxCell id="actor_staff" value="Staf / Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="450" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_owner" value="Pemilik Usaha" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1670" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_customer" value="Pelanggan" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1020" width="30" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Common Use Cases -->
+        <mxCell id="uc_daftar" value="Daftar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="155" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_login" value="Login" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="245" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_logout" value="Keluar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="2035" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_profil" value="Perbarui Profil" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="745" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_dashboard" value="Lihat Dashboard / Beranda" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="825" width="160" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Left Column (Staff & Owner) Use Cases -->
+        <mxCell id="uc_menu" value="Kelola Menu Makanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="344" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_menu_img" value="Unggah Gambar Menu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="346" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_bahan" value="Kelola Bahan Baku" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="504" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_bahan_init" value="Inisialisasi Bahan Pokok" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="506" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_bahan_thres" value="Update Ambang Batas Stok" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="586" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_stok" value="Kelola Stok &amp; Restok" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="664" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_pesanan" value="Kelola Pesanan &amp; Kasir" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="954" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_pesanan_val" value="Validasi Bukti Pembayaran" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="906" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_pesanan_stat" value="Update Status Pesanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="1006" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_laporan" value="Lihat Laporan Penjualan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="1134" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_laporan_rev" value="Analisis Pendapatan Tipe Layanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1086" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_laporan_item" value="Analisis Menu Terlaris" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1186" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_owner_total_rev" value="Lihat Total Pendapatan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="345" y="1904" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_owner_pend_split" value="Pendapatan Harian / Mingguan / Bulanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1826" width="165" height="48" as="geometry" />
+        </mxCell>
+        
+        <!-- Right Column (Customer) Use Cases -->
+        <mxCell id="uc_cust_menu" value="Melihat Daftar Menu Makanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="785" y="424" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cust_pesan" value="Melakukan Pemesanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="785" y="1264" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cust_layanan" value="Pilih Tipe Layanan (DineIn/TakeAway/Delivery)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="517.5" y="1346" width="165" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cust_ongkir" value="Hitung Ongkos Kirim Otomatis" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="1426" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cust_bukti" value="Unggah Bukti Transaksi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="1506" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cust_bayar" value="Melakukan Pembayaran" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="785" y="1584" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cust_riwayat" value="Melihat Riwayat Pesanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1665" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cust_lacak" value="Melacak Pengiriman &amp; Status Pesanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="785" y="1744" width="170" height="52" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections: Staff -> Use Cases -->
+        <mxCell id="conn_staff_login" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_menu" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_menu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_bahan" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_bahan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_stok" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_stok">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_profil" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_profil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_dashboard" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_dashboard">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_pesanan" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_pesanan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_laporan" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_laporan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_staff_logout" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_staff" target="uc_logout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections: Owner -> Use Cases -->
+        <mxCell id="conn_owner_login" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_owner" target="uc_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_owner_stok" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_owner" target="uc_stok">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_owner_profil" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_owner" target="uc_profil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_owner_dashboard" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_owner" target="uc_dashboard">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_owner_laporan" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_owner" target="uc_laporan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_owner_total_rev" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_owner" target="uc_owner_total_rev">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_owner_logout" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_owner" target="uc_logout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections: Customer -> Use Cases -->
+        <mxCell id="conn_cust_daftar" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_daftar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_login" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_menu" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_cust_menu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_profil" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_profil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_dashboard" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_dashboard">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_pesan" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_cust_pesan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_bayar" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_cust_bayar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_riwayat" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_cust_riwayat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_lacak" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_cust_lacak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_cust_logout" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_customer" target="uc_logout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Dependencies (Dashed Arrows) -->
+        <!-- 1. Kelola Menu -> include -> Unggah Gambar Menu -->
+        <mxCell id="dep_menu_img" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_menu" target="uc_menu_img">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 2. Kelola Bahan -> include -> Inisialisasi Bahan Pokok -->
+        <mxCell id="dep_bahan_init" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_bahan" target="uc_bahan_init">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 3. Update Ambang Batas Stok -> extend -> Kelola Bahan Baku -->
+        <mxCell id="dep_bahan_thres" value="&lt;&lt;extend&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_bahan_thres" target="uc_bahan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 4. Kelola Pesanan -> include -> Validasi Bukti Pembayaran -->
+        <mxCell id="dep_pesanan_val" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_pesanan" target="uc_pesanan_val">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 5. Kelola Pesanan -> include -> Update Status Pesanan -->
+        <mxCell id="dep_pesanan_stat" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_pesanan" target="uc_pesanan_stat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 6. Lihat Laporan -> include -> Analisis Pendapatan Tipe Layanan -->
+        <mxCell id="dep_laporan_rev" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_laporan" target="uc_laporan_rev">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 7. Lihat Laporan -> include -> Analisis Menu Terlaris -->
+        <mxCell id="dep_laporan_item" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_laporan" target="uc_laporan_item">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 8. Melakukan Pemesanan -> include -> Pilih Tipe Layanan -->
+        <mxCell id="dep_cust_layanan" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_cust_pesan" target="uc_cust_layanan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 9. Melakukan Pemesanan -> include -> Hitung Ongkos Kirim Otomatis -->
+        <mxCell id="dep_cust_ongkir" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_cust_pesan" target="uc_cust_ongkir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 10. Melakukan Pembayaran -> include -> Unggah Bukti Transaksi -->
+        <mxCell id="dep_cust_bukti" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_cust_bayar" target="uc_cust_bukti">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 11. Melacak Pengiriman -> extend -> Melihat Riwayat Pesanan -->
+        <mxCell id="dep_cust_lacak" value="&lt;&lt;extend&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_cust_lacak" target="uc_cust_riwayat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 12. Lihat Total Pendapatan -> include -> Pendapatan Harian / Mingguan / Bulanan -->
+        <mxCell id="dep_owner_pend" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="uc_owner_total_rev" target="uc_owner_pend_split">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

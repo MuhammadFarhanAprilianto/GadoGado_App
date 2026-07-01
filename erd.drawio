@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-06-22T07:00:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="erd-mpolemezz" name="ERD - Mpo Lemezz App">
+    <mxGraphModel dx="1420" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="1400" math="0" shadow="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TABLE: BAHAN -->
+        <mxCell id="10" value="bahan" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#e1f5fe;strokeColor=#01579b;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="58" y="80" width="222" height="188" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="PK  id_bahan : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="10">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="     nama_bahan : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="10">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="     kategori : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="10">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="     stok : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="10">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="     satuan : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="10">
+          <mxGeometry y="118" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="     ambang_batas_stok : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="10">
+          <mxGeometry y="140" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="     timestamp : Timestamp" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="10">
+          <mxGeometry y="162" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- TABLE: TOPPINGS -->
+        <mxCell id="18" value="toppings" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#f3e5f5;strokeColor=#7b1fa2;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="58" y="400" width="222" height="122" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="PK  id_topping : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="18">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="     nama : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="18">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="     harga : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="18">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="FK  id_bahan : String" style="text;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="18">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- TABLE: RESTOCK -->
+        <mxCell id="23" value="restock" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="58" y="635" width="222" height="188" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="PK  id_restock : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="23">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="25" value="FK  id_bahan : String" style="text;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="23">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="FK  id_user : String" style="text;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="23">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="27" value="     jumlah : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="23">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="     biaya : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="23">
+          <mxGeometry y="118" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="29" value="     tanggal : Timestamp" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="23">
+          <mxGeometry y="140" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="30" value="     keterangan : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="23">
+          <mxGeometry y="162" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- TABLE: USERS -->
+        <mxCell id="31" value="users" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#e3f2fd;strokeColor=#1565c0;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="80" width="222" height="188" as="geometry"/>
+        </mxCell>
+        <mxCell id="32" value="PK  id_user : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="31">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="     uid : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="31">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="34" value="     nama : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="31">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="35" value="     email : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="31">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="36" value="     role : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="31">
+          <mxGeometry y="118" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="37" value="     hp : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="31">
+          <mxGeometry y="140" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="38" value="     avatar_url : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="31">
+          <mxGeometry y="162" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- TABLE: ORDERS -->
+        <mxCell id="39" value="orders" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="320" width="222" height="562" as="geometry"/>
+        </mxCell>
+        <mxCell id="40" value="PK  id_order : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="41" value="FK  id_user : String" style="text;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="42" value="     total : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="43" value="     subtotal : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="44" value="     pajak : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="118" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="45" value="     biaya_layanan : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="140" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="46" value="     status : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="162" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="47" value="     tipe_layanan : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="184" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="48" value="     metode_pembayaran : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="206" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="49" value="     waktu_pesan : Timestamp" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="228" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="50" value="     waktu_selesai : Timestamp" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="250" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="51" value="     waktu_reservasi : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="272" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="52" value="     tanggal_reservasi : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="294" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="53" value="     alamat_pengiriman : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="316" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="54" value="     biaya_pengiriman : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="338" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="55" value="     catatan_khusus : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="360" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="56" value="     latitude : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="382" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="57" value="     longitude : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="404" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="58" value="     rating : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="426" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="59" value="     catatan_rating : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="448" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="60" value="     waktu_rating : Timestamp" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="470" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="61" value="     bukti_pembayaran_url : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="492" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="62" value="     nama_pelanggan : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="514" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="63" value="     hp_pelanggan : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="39">
+          <mxGeometry y="536" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- TABLE: DETAIL -->
+        <mxCell id="64" value="detail" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#fce4ec;strokeColor=#c62828;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="525" y="1056" width="222" height="166" as="geometry"/>
+        </mxCell>
+        <mxCell id="65" value="PK  id_detail : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="64">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="66" value="FK  id_order : String" style="text;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="64">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="67" value="FK  id_menu : String" style="text;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="64">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="68" value="     jml : int" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="64">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="69" value="     harga : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="64">
+          <mxGeometry y="118" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="70" value="     catatan : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="64">
+          <mxGeometry y="140" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- TABLE: MENU -->
+        <mxCell id="71" value="menu" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#f1f8e9;strokeColor=#558b2f;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="320" width="222" height="276" as="geometry"/>
+        </mxCell>
+        <mxCell id="72" value="PK  id_menu : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="73" value="     nama : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="74" value="     deskr : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="75" value="     harga : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="76" value="     gambar : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="118" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="77" value="     kategori : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="140" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="78" value="     stok : int" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="162" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="79" value="     terlaris : bool" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="184" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="80" value="     baru : bool" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="206" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="81" value="     tersedia : bool" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="228" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="82" value="     resep : List" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="71">
+          <mxGeometry y="250" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- TABLE: SETTINGS -->
+        <mxCell id="83" value="settings" style="swimlane;fontStyle=1;align=center;startSize=30;container=1;collapsible=0;expand=0;fillColor=#f5f5f5;strokeColor=#424242;strokeWidth=2;rounded=0;arcSize=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="80" width="222" height="188" as="geometry"/>
+        </mxCell>
+        <mxCell id="84" value="PK  shop_status(docID) : String" style="text;html=1;fillColor=#fffde7;strokeColor=#f9a825;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontStyle=1;fontSize=10;" vertex="1" parent="83">
+          <mxGeometry y="30" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="85" value="     status : String" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="83">
+          <mxGeometry y="52" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="86" value="     isManualOverride : bool" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="83">
+          <mxGeometry y="74" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="87" value="     lastUpdated : Timestamp" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="83">
+          <mxGeometry y="96" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="88" value="     latitude : double" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="83">
+          <mxGeometry y="118" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="89" value="     longitude : double" style="text;html=1;fillColor=#f9f9f9;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="83">
+          <mxGeometry y="140" width="222" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="90" value="     address : String" style="text;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;align=left;verticalAlign=middle;spacingLeft=4;overflow=hidden;rotatable=0;fontSize=10;" vertex="1" parent="83">
+          <mxGeometry y="162" width="222" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONSHIPS -->
+        <mxCell id="91" value="1:M  (id_user)" style="endArrow=open;endFill=0;endSize=8;startArrow=ERone;startFill=0;strokeColor=#1565c0;fontColor=#1565c0;fontStyle=1;fontSize=9;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1" source="31" target="39">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="92" value="1:M  (id_order)" style="endArrow=open;endFill=0;endSize=8;startArrow=ERone;startFill=0;strokeColor=#e65100;fontColor=#e65100;fontStyle=1;fontSize=9;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1" source="39" target="64">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="93" value="1:M  (id_menu)" style="endArrow=open;endFill=0;endSize=8;startArrow=ERone;startFill=0;strokeColor=#558b2f;fontColor=#558b2f;fontStyle=1;fontSize=9;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1" source="71" target="64">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="94" value="1:M  (id_bahan)" style="endArrow=open;endFill=0;endSize=8;startArrow=ERone;startFill=0;strokeColor=#01579b;fontColor=#01579b;fontStyle=1;fontSize=9;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1" source="10" target="18">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="95" value="1:M  (id_bahan)" style="endArrow=open;endFill=0;endSize=8;startArrow=ERone;startFill=0;strokeColor=#01579b;fontColor=#01579b;fontStyle=1;fontSize=9;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1" source="10" target="23">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="96" value="1:M  (id_user)" style="endArrow=open;endFill=0;endSize=8;startArrow=ERone;startFill=0;strokeColor=#1565c0;fontColor=#1565c0;fontStyle=1;fontSize=9;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1" source="31" target="23">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="97" value="M:N  (resep)" style="endArrow=open;endFill=0;endSize=8;startArrow=ERone;startFill=0;strokeColor=#7b1fa2;fontColor=#7b1fa2;fontStyle=1;fontSize=9;labelBackgroundColor=#ffffff;rounded=0;" edge="1" parent="1" source="10" target="71">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

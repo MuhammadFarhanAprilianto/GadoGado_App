@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "573392892473",
+    "project_id": "gadogado-pos-748ca",
+    "storage_bucket": "gadogado-pos-748ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573392892473:android:2127b5e99ea3e69022d3e8",
+        "android_client_info": {
+          "package_name": "com.example.gado_gado_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkeQLP-7C0bs_F6vkWGjmENgXfavCsM_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
