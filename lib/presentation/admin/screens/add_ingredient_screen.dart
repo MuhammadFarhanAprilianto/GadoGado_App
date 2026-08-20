@@ -55,7 +55,7 @@ class _AddIngredientScreenState extends State<AddIngredientScreen> {
             const Icon(Icons.restaurant_menu, color: AppColors.primary, size: 28),
             const SizedBox(width: 8),
             const Text(
-              'Mpo Lemezz',
+              'Warung Mpo Lemez',
               style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w900, fontSize: 24),
             ),
           ],

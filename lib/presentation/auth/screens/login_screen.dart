@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../viewmodels/auth_viewmodel.dart';
 import 'register_screen.dart';
+import '../../widgets/responsive_layout.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -85,25 +86,27 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final authVM = context.watch<AuthViewModel>();
 
-    return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFFE8F5E9),
-              Colors.white,
-              Color(0xFFFFF3E0),
-            ],
-            stops: [0.0, 0.5, 1.0],
+    return ResponsiveLayout(
+      child: Scaffold(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFFE8F5E9),
+                Colors.white,
+                Color(0xFFFFF3E0),
+              ],
+              stops: [0.0, 0.5, 1.0],
+            ),
           ),
-        ),
-        child: SafeArea(
-          child: Center(
-            child: SingleChildScrollView(
+          child: SafeArea(
+            child: Center(
+              child: SingleChildScrollView(
+
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 24),
                   
-                  // Mpo Lemezz Title (same as original, not changed)
+                  // Warung Mpo Lemez Title
                   RichText(
                     textAlign: TextAlign.center,
                     text: const TextSpan(
@@ -150,8 +153,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         letterSpacing: -1,
                       ),
                       children: [
-                        TextSpan(text: 'Mpo ', style: TextStyle(color: Color(0xFF1A1A1A))),
-                        TextSpan(text: 'Lemezz', style: TextStyle(color: AppColors.primary)),
+                        TextSpan(text: 'Warung ', style: TextStyle(color: Color(0xFF1A1A1A))),
+                        TextSpan(text: 'Mpo Lemez', style: TextStyle(color: AppColors.primary)),
                       ],
                     ),
                   ),
@@ -349,6 +352,6 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-    );
+    ),);
   }
 }

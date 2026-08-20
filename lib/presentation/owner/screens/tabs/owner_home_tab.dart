@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../providers/owner_navigation_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/formatter.dart';
 import '../../../../data/models/order_model.dart';
 import '../../viewmodels/owner_view_model.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
@@ -111,7 +113,7 @@ class OwnerHomeTab extends StatelessWidget {
                             children: [
                               Text(item.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
                               Text(
-                                '${item.amount} ${item.unit} (Min: ${item.minStockThreshold} ${item.unit})',
+                                '${item.amount.toCleanString()} ${item.unit} (Min: ${item.minStockThreshold?.toCleanString() ?? "0"} ${item.unit})',
                                 style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 12),
                               ),
                             ],
@@ -191,7 +193,25 @@ class OwnerHomeTab extends StatelessWidget {
                 }),
               
               const SizedBox(height: 16),
-              const Center(child: Text('Lihat Riwayat Lebih Banyak', style: TextStyle(color: Colors.grey, fontSize: 12, decoration: TextDecoration.underline))),
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    try {
+                      context.read<OwnerNavigationProvider>().setIndex(1);
+                    } catch (e) {
+                      debugPrint('Error navigating to owner history tab: $e');
+                    }
+                  },
+                  child: const Text(
+                    'Lihat Riwayat Lebih Banyak',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

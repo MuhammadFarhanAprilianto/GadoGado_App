@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:printing/printing.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../auth/viewmodels/auth_viewmodel.dart';
 import '../viewmodels/customer_viewmodel.dart';
@@ -146,6 +148,40 @@ class OrderSummaryScreen extends StatelessWidget {
         Text(value, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
       ],
     );
+  }
+
+  Future<void> _downloadQrisImage(BuildContext context) async {
+    final authVM = context.read<AuthViewModel>();
+    final lang = authVM.selectedLanguage;
+    try {
+      final ByteData bytes = await rootBundle.load('assets/images/Pembayaran Qris.jpeg');
+      final Uint8List list = bytes.buffer.asUint8List();
+
+      await Printing.sharePdf(
+        bytes: list,
+        filename: 'QRIS_GadoGado_Mpo_Lemezz.jpeg',
+      );
+
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(lang == 'en' ? 'QRIS image ready to save/download' : 'Gambar QRIS siap disimpan/didownload'),
+            behavior: SnackBarBehavior.floating,
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      }
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(lang == 'en' ? 'Failed to download QRIS: $e' : 'Gagal mendownload QRIS: $e'),
+            backgroundColor: Colors.redAccent,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+    }
   }
 
   Future<void> _pickPaymentProof(BuildContext context, CustomerViewModel vm) async {
@@ -533,6 +569,25 @@ class OrderSummaryScreen extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset('assets/images/Pembayaran Qris.jpeg', width: 220, height: 320, fit: BoxFit.contain),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    Center(
+                      child: OutlinedButton.icon(
+                        onPressed: () => _downloadQrisImage(context),
+                        icon: const Icon(Icons.download_rounded, size: 18),
+                        label: Text(
+                          Translator.translate('summary_download_qris', Provider.of<AuthViewModel>(context, listen: false).selectedLanguage),
+                          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: AppColors.primary,
+                          side: const BorderSide(color: AppColors.primary, width: 1.5),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
                     ),

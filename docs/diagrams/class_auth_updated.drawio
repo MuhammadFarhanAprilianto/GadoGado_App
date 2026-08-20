@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-07-01T14:15:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="class-class_auth_updated" name="Page-1">
+    <mxGraphModel dx="1200" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="class_MyApp" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;MyApp&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+build() : Widget&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="400" y="110" width="200" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="class_LoginScreen" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;LoginScreen&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;-emailController: TextEditingController&lt;br/&gt;-passwordController: TextEditingController&lt;br/&gt;-obscurePassword: bool&lt;br/&gt;-rememberMe: bool&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+_handleLogin() : void&lt;br/&gt;+_showForgotPasswordDialog() : void&lt;br/&gt;+build() : Widget&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="125" y="240" width="250" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="class_RegisterScreen" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;RegisterScreen&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;-nameController: TextEditingController&lt;br/&gt;-emailController: TextEditingController&lt;br/&gt;-phoneController: TextEditingController&lt;br/&gt;-passwordController: TextEditingController&lt;br/&gt;-confirmPasswordController: TextEditingController&lt;br/&gt;-agreeToTerms: bool&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+_handleSignUp() : void&lt;br/&gt;+build() : Widget&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="615" y="240" width="270" height="199" as="geometry" />
+        </mxCell>
+        <mxCell id="class_AuthViewModel" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;AuthViewModel&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;-auth: FirebaseAuth&lt;br/&gt;-firestore: FirebaseFirestore&lt;br/&gt;-currentUser: UserModel?&lt;br/&gt;-isLoading: bool&lt;br/&gt;-isInitializing: bool&lt;br/&gt;-errorMessage: String?&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+login(email, password) : Future&lt;bool&gt;&lt;br/&gt;+register(name, email, phone, password, role) : Future&lt;bool&gt;&lt;br/&gt;+logout() : Future&lt;void&gt;&lt;br/&gt;+_getNextUserId() : Future&lt;String&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="520" width="320" height="235" as="geometry" />
+        </mxCell>
+        <mxCell id="class_UserModel" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;UserModel&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+id: String&lt;br/&gt;+uid: String&lt;br/&gt;+name: String&lt;br/&gt;+email: String&lt;br/&gt;+role: String&lt;br/&gt;+profilePic: String?&lt;br/&gt;+phone: String?&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+fromFirestore(data, id) : UserModel&lt;br/&gt;+toFirestore() : Map&lt;String, dynamic&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="830" width="260" height="217" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_0" value="displays" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="181" as="sourcePoint" />
+            <mxPoint x="250" y="240" as="targetPoint" />
+            <Array>
+              <mxPoint x="500" y="210" />
+              <mxPoint x="250" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_0_mend" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="215" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_1" value="navigates to" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="375" y="300" as="sourcePoint" />
+            <mxPoint x="615" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_1_mend" value="0..1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="575" y="275" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_2" value="" style="endArrow=none;startArrow=diamondThin;startFill=0;startSize=12;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="421" as="sourcePoint" />
+            <mxPoint x="340" y="520" as="targetPoint" />
+            <Array>
+              <mxPoint x="250" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_2_mstart" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="426" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_2_mend" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="495" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_3" value="" style="endArrow=none;startArrow=diamondThin;startFill=0;startSize=12;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="457" as="sourcePoint" />
+            <mxPoint x="660" y="520" as="targetPoint" />
+            <Array>
+              <mxPoint x="750" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_3_mstart" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="462" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_3_mend" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="495" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_4" value="" style="endArrow=none;startArrow=diamondThin;startFill=0;startSize=12;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="791" as="sourcePoint" />
+            <mxPoint x="500" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_4_mstart" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="796" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_4_mend" value="0..1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="805" width="30" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

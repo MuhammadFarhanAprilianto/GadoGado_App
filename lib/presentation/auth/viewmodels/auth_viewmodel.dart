@@ -195,9 +195,33 @@ class AuthViewModel extends ChangeNotifier {
         if (data.containsKey('description_id')) updates['description_id'] = FieldValue.delete();
         if (data.containsKey('description_en')) updates['description_en'] = FieldValue.delete();
 
+        // ── Perbaikan Mismatch Resep Telur (1.0 kg -> 0.06 kg) ──
+        if (data.containsKey('resep') && data['resep'] is List) {
+          final List<dynamic> currentRecipe = data['resep'] as List;
+          bool needsUpdate = false;
+          final List<Map<String, dynamic>> updatedRecipe = [];
+          
+          for (var r in currentRecipe) {
+            if (r is Map) {
+              final Map<String, dynamic> rMap = Map<String, dynamic>.from(r);
+              final String name = rMap['nama_bahan'] ?? rMap['ingredientName'] ?? '';
+              final double qty = (rMap['jumlah_per_porsi'] ?? rMap['quantityPerPortion'] ?? 0.0).toDouble();
+              
+              if (name.toLowerCase() == 'telur' && (qty == 1.0 || qty == 1)) {
+                rMap['jumlah_per_porsi'] = 0.06;
+                needsUpdate = true;
+              }
+              updatedRecipe.add(rMap);
+            }
+          }
+          if (needsUpdate) {
+            updates['resep'] = updatedRecipe;
+          }
+        }
+
         if (updates.isNotEmpty) {
           await _firestore.collection('menu').doc(doc.id).update(updates);
-          debugPrint('AuthViewModel._cleanMenuTranslationFields: Cleared legacy translation fields for menu item: ${doc.id}');
+          debugPrint('AuthViewModel._cleanMenuTranslationFields: Cleared legacy translation fields / updated egg quantity for menu item: ${doc.id}');
         }
       }
     } catch (e) {

@@ -231,7 +231,7 @@ class _OwnerProfileTabState extends State<OwnerProfileTab> {
             
             _buildSectionHeader(Icons.business_center_outlined, 'Detail Bisnis', isCentered: true),
             const SizedBox(height: 16),
-            _buildInfoRow('NAMA USAHA', 'Gado-Gado Mpo Lemez', isCentered: true),
+            _buildInfoRow('NAMA USAHA', 'Warung Mpo Lemez', isCentered: true),
             _buildInfoRow('KATEGORI BISNIS', 'Kuliner Tradisional Betawi', isCentered: true),
             _buildInfoRow('LOKASI UTAMA', customerVM.shopAddress, isCentered: true),
             _buildInfoRow('ID BISNIS', 'MLZ-JKT-13520-2018', isCentered: true),

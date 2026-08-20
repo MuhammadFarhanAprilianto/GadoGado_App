@@ -7,6 +7,7 @@ import '../viewmodels/customer_viewmodel.dart';
 import 'package:gado_gado_app/presentation/auth/viewmodels/auth_viewmodel.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../../core/utils/translator.dart';
+import '../../widgets/responsive_layout.dart';
 
 class CustomerMainScreen extends StatefulWidget {
   const CustomerMainScreen({super.key});
@@ -46,44 +47,46 @@ class _CustomerMainScreenState extends State<CustomerMainScreen> {
   Widget build(BuildContext context) {
     return Consumer2<AuthViewModel, CustomerViewModel>(
       builder: (context, authVM, vm, child) {
-        return Scaffold(
-          body: IndexedStack(
-            index: vm.currentTabIndex,
-            children: _tabs,
-          ),
-          bottomNavigationBar: Container(
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, -5),
-                ),
-              ],
+        return ResponsiveLayout(
+          child: Scaffold(
+            body: IndexedStack(
+              index: vm.currentTabIndex,
+              children: _tabs,
             ),
-            child: BottomNavigationBar(
-              currentIndex: vm.currentTabIndex,
-              onTap: (index) => vm.setTabIndex(index),
-              selectedItemColor: AppColors.primary,
-              unselectedItemColor: Colors.grey,
-              showSelectedLabels: true,
-              items: [
-                BottomNavigationBarItem(
-                  icon: const Icon(Icons.home_outlined),
-                  activeIcon: const Icon(Icons.home),
-                  label: Translator.translate('nav_home', authVM.selectedLanguage),
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(Icons.shopping_bag_outlined),
-                  activeIcon: const Icon(Icons.shopping_bag),
-                  label: Translator.translate('nav_order', authVM.selectedLanguage),
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(Icons.person_outline),
-                  activeIcon: const Icon(Icons.person),
-                  label: Translator.translate('nav_profile', authVM.selectedLanguage),
-                ),
-              ],
+            bottomNavigationBar: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, -5),
+                  ),
+                ],
+              ),
+              child: BottomNavigationBar(
+                currentIndex: vm.currentTabIndex,
+                onTap: (index) => vm.setTabIndex(index),
+                selectedItemColor: AppColors.primary,
+                unselectedItemColor: Colors.grey,
+                showSelectedLabels: true,
+                items: [
+                  BottomNavigationBarItem(
+                    icon: const Icon(Icons.home_outlined),
+                    activeIcon: const Icon(Icons.home),
+                    label: Translator.translate('nav_home', authVM.selectedLanguage),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: const Icon(Icons.shopping_bag_outlined),
+                    activeIcon: const Icon(Icons.shopping_bag),
+                    label: Translator.translate('nav_order', authVM.selectedLanguage),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: const Icon(Icons.person_outline),
+                    activeIcon: const Icon(Icons.person),
+                    label: Translator.translate('nav_profile', authVM.selectedLanguage),
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -91,3 +94,4 @@ class _CustomerMainScreenState extends State<CustomerMainScreen> {
     );
   }
 }
+

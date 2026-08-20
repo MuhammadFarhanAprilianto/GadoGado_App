@@ -6,6 +6,7 @@ import 'tabs/owner_stock_tab.dart';
 import 'tabs/owner_profile_tab.dart';
 import 'package:provider/provider.dart';
 import '../providers/owner_navigation_provider.dart';
+import '../../widgets/responsive_layout.dart';
 
 class OwnerMainScreen extends StatefulWidget {
   const OwnerMainScreen({super.key});
@@ -29,20 +30,22 @@ class _OwnerMainScreenState extends State<OwnerMainScreen> {
       create: (_) => OwnerNavigationProvider(),
       child: Consumer<OwnerNavigationProvider>(
         builder: (context, navProv, _) {
-          return Scaffold(
-            body: _tabs[navProv.currentIndex],
-            bottomNavigationBar: BottomNavigationBar(
-              currentIndex: navProv.currentIndex,
-              onTap: (index) => navProv.setIndex(index),
-              selectedItemColor: AppColors.primary,
-              unselectedItemColor: Colors.grey,
-              type: BottomNavigationBarType.fixed,
-              items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Beranda'),
-                BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Riwayat'),
-                BottomNavigationBarItem(icon: Icon(Icons.inventory_2_outlined), label: 'Stok'),
-                BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profil'),
-              ],
+          return ResponsiveLayout(
+            child: Scaffold(
+              body: _tabs[navProv.currentIndex],
+              bottomNavigationBar: BottomNavigationBar(
+                currentIndex: navProv.currentIndex,
+                onTap: (index) => navProv.setIndex(index),
+                selectedItemColor: AppColors.primary,
+                unselectedItemColor: Colors.grey,
+                type: BottomNavigationBarType.fixed,
+                items: const [
+                  BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Beranda'),
+                  BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Riwayat'),
+                  BottomNavigationBarItem(icon: Icon(Icons.inventory_2_outlined), label: 'Stok'),
+                  BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profil'),
+                ],
+              ),
             ),
           );
         },
@@ -50,3 +53,4 @@ class _OwnerMainScreenState extends State<OwnerMainScreen> {
     );
   }
 }
+

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/utils/translator.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/formatter.dart';
 import '../../../../data/models/order_model.dart';
 import 'package:gado_gado_app/data/models/shop_settings_model.dart';
 import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dart';
@@ -224,7 +225,7 @@ class AdminHomeTab extends StatelessWidget {
                           children: [
                             Text(item.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
                             Text(
-                              '${item.amount} ${item.unit} (Min: ${item.minStockThreshold} ${item.unit})',
+                              '${item.amount.toCleanString()} ${item.unit} (Min: ${item.minStockThreshold?.toCleanString() ?? "0"} ${item.unit})',
                               style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 12),
                             ),
                           ],
@@ -607,7 +608,7 @@ class AdminHomeTab extends StatelessWidget {
                         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                       ),
                       subtitle: Text(
-                        'Harga: Rp ${topping.price.toInt()} | Link Stok: ${ingredient.name} (${ingredient.amount} ${ingredient.unit})',
+                        'Harga: Rp ${topping.price.toInt()} | Link Stok: ${ingredient.name} (${ingredient.amount.toCleanString()} ${ingredient.unit})',
                         style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
                       ),
                       trailing: Row(
@@ -1364,7 +1365,7 @@ class AdminHomeTab extends StatelessWidget {
                               ),
                             ),
                             subtitle: Text(
-                              '${Translator.translate('tag_out_of_stock', lang)}: ${item.amount} ${item.unit} (${item.category})',
+                              '${Translator.translate('tag_out_of_stock', lang)}: ${item.amount.toCleanString()} ${item.unit} (${item.category})',
                               style: const TextStyle(
                                 color: Color(0xFFC62828),
                                 fontSize: 12,

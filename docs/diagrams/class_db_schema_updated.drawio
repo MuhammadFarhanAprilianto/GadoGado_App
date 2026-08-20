@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-07-01T14:15:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="class-class_db_schema_updated" name="Page-1">
+    <mxGraphModel dx="1200" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="class_users" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;users&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+id_user: String (DocID)&lt;br/&gt;+uid: String&lt;br/&gt;+nama: String&lt;br/&gt;+email: String&lt;br/&gt;+role: String&lt;br/&gt;+avatar_url: String&lt;br/&gt;+hp: String&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="90" y="120" width="220" height="181" as="geometry" />
+        </mxCell>
+        <mxCell id="class_orders" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;orders&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+id_order: String (DocID)&lt;br/&gt;+id_user: String (UID)&lt;br/&gt;+total: double&lt;br/&gt;+subtotal: double&lt;br/&gt;+pajak: double&lt;br/&gt;+biaya_layanan: double&lt;br/&gt;+status: String&lt;br/&gt;+tipe_layanan: String&lt;br/&gt;+metode_pembayaran: String&lt;br/&gt;+waktu_reservasi: String&lt;br/&gt;+tanggal_reservasi: String&lt;br/&gt;+alamat_pengiriman: String&lt;br/&gt;+biaya_pengiriman: double&lt;br/&gt;+catatan_khusus: String&lt;br/&gt;+waktu_pesan: Timestamp&lt;br/&gt;+waktu_selesai: Timestamp&lt;br/&gt;+latitude: double&lt;br/&gt;+longitude: double&lt;br/&gt;+rating: double&lt;br/&gt;+catatan_rating: String&lt;br/&gt;+waktu_rating: Timestamp&lt;br/&gt;+bukti_pembayaran_url: String&lt;br/&gt;+nama_pelanggan: String&lt;br/&gt;+hp_pelanggan: String&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="470" y="120" width="260" height="487" as="geometry" />
+        </mxCell>
+        <mxCell id="class_menu" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;menu&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+id_menu: String (DocID)&lt;br/&gt;+nama: String&lt;br/&gt;+deskr: String&lt;br/&gt;+harga: double&lt;br/&gt;+kategori: String&lt;br/&gt;+gambar: String&lt;br/&gt;+stok: int&lt;br/&gt;+terlaris: bool&lt;br/&gt;+baru: bool&lt;br/&gt;+tersedia: bool&lt;br/&gt;+resep: List&lt;RecipeItem&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="880" y="120" width="240" height="253" as="geometry" />
+        </mxCell>
+        <mxCell id="class_bahan" value="&lt;p style=&quot;margin:0px;padding:4px;text-align:center;&quot;&gt;&lt;b&gt;bahan&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;margin:0px;border:0;border-top:1px solid #000000;&quot;/&gt;&lt;p style=&quot;margin:0px;padding:4px;text-align:left;&quot;&gt;+id_bahan: String (DocID)&lt;br/&gt;+nama_bahan: String&lt;br/&gt;+kategori: String&lt;br/&gt;+stok: double&lt;br/&gt;+satuan: String&lt;br/&gt;+ambang_batas_stok: double&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;strokeColor=#000000;strokeWidth=2;fillColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="880" y="450" width="240" height="163" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_0" value="references id_user" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="200" as="sourcePoint" />
+            <mxPoint x="310" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_0_mstart" value="*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="430" y="205" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_0_mend" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="320" y="175" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_1" value="references id_menu" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="200" as="sourcePoint" />
+            <mxPoint x="880" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_1_mstart" value="*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="205" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_1_mend" value="*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="840" y="175" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_2" value="references id_bahan" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="375" as="sourcePoint" />
+            <mxPoint x="1000" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_2_mstart" value="*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="960" y="380" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_2_mend" value="*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="425" width="30" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

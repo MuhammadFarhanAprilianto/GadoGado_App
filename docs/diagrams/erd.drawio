@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-07-08T02:30:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="erd-pure-chen-diagram" name="Page-1">
+    <mxGraphModel dx="1200" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2300" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- ENTITY: RESTOCK -->
+        <mxCell id="10" value="RESTOCK" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="195" y="226" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- ENTITY: BAHAN -->
+        <mxCell id="11" value="BAHAN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="845" y="226" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- ENTITY: SETTINGS -->
+        <mxCell id="12" value="SETTINGS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1595" y="226" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- ENTITY: TOPPINGS -->
+        <mxCell id="13" value="TOPPINGS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="520" y="476" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- ENTITY: USERS -->
+        <mxCell id="14" value="USERS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="195" y="1076" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- ENTITY: ORDERS -->
+        <mxCell id="15" value="ORDERS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="845" y="1076" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- ENTITY: DETAIL -->
+        <mxCell id="16" value="DETAIL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1395" y="1076" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- ENTITY: MENU -->
+        <mxCell id="17" value="MENU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e98c24;strokeColor=#000000;fontColor=#ffffff;fontStyle=1;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1895" y="1076" width="110" height="48" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_restock of RESTOCK -->
+        <mxCell id="18" value="id_restock" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="363" y="232" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_18" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_bahan of RESTOCK -->
+        <mxCell id="19" value="id_bahan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="302" y="357" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_19" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_user of RESTOCK -->
+        <mxCell id="20" value="id_user" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="167" y="387" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_20" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: jumlah of RESTOCK -->
+        <mxCell id="21" value="jumlah" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="58" y="301" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_21" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: biaya of RESTOCK -->
+        <mxCell id="22" value="biaya" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="58" y="162" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_22" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: tanggal of RESTOCK -->
+        <mxCell id="23" value="tanggal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="167" y="76" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_23" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: keterangan of RESTOCK -->
+        <mxCell id="24" value="keterangan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="302" y="106" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_24" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_bahan of BAHAN -->
+        <mxCell id="25" value="id_bahan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="1007" y="273" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_25" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="11" target="25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: nama_bahan of BAHAN -->
+        <mxCell id="26" value="nama_bahan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="916" y="378" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_26" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="11" target="26">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: kategori of BAHAN -->
+        <mxCell id="27" value="kategori" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="778" y="373" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_27" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="11" target="27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: stok of BAHAN -->
+        <mxCell id="28" value="stok" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="695" y="261" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_28" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="11" target="28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: satuan of BAHAN -->
+        <mxCell id="29" value="satuan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="731" y="127" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_29" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="11" target="29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: ambang_batas of BAHAN -->
+        <mxCell id="30" value="ambang_batas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="858" y="72" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_30" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="11" target="30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: timestamp of BAHAN -->
+        <mxCell id="31" value="timestamp" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="981" y="136" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_31" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="11" target="31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: shop_status of SETTINGS -->
+        <mxCell id="32" value="shop_status" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="1763" y="232" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_32" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="12" target="32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: status of SETTINGS -->
+        <mxCell id="33" value="status" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1702" y="357" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_33" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="12" target="33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: isManualOverride of SETTINGS -->
+        <mxCell id="34" value="isManualOverride" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="387" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_34" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="12" target="34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: lastUpdated of SETTINGS -->
+        <mxCell id="35" value="lastUpdated" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1458" y="301" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_35" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="12" target="35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: latitude of SETTINGS -->
+        <mxCell id="36" value="latitude" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1458" y="162" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_36" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="12" target="36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: longitude of SETTINGS -->
+        <mxCell id="37" value="longitude" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1567" y="76" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_37" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="12" target="37">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: address of SETTINGS -->
+        <mxCell id="38" value="address" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1702" y="106" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_38" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="12" target="38">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_topping of TOPPINGS -->
+        <mxCell id="39" value="id_topping" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="688" y="482" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_39" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="13" target="39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_bahan of TOPPINGS -->
+        <mxCell id="40" value="id_bahan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="528" y="642" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_40" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="13" target="40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: nama of TOPPINGS -->
+        <mxCell id="41" value="nama" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="368" y="482" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_41" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="13" target="41">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: harga of TOPPINGS -->
+        <mxCell id="42" value="harga" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="528" y="322" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_42" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="13" target="42">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_user of USERS -->
+        <mxCell id="43" value="id_user" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="357" y="1123" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_43" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="14" target="43">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: uid of USERS -->
+        <mxCell id="44" value="uid" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="266" y="1228" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_44" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="14" target="44">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: nama of USERS -->
+        <mxCell id="45" value="nama" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="128" y="1223" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_45" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="14" target="45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: email of USERS -->
+        <mxCell id="46" value="email" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="45" y="1111" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_46" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="14" target="46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: role of USERS -->
+        <mxCell id="47" value="role" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="81" y="977" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_47" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="14" target="47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: hp of USERS -->
+        <mxCell id="48" value="hp" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="208" y="922" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_48" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="14" target="48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: avatar_url of USERS -->
+        <mxCell id="49" value="avatar_url" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="331" y="986" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_49" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="14" target="49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_order of ORDERS -->
+        <mxCell id="50" value="id_order" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="1053" y="1082" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_50" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_user of ORDERS -->
+        <mxCell id="51" value="id_user" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1026" y="1182" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_51" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="51">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: total of ORDERS -->
+        <mxCell id="52" value="total" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="953" y="1255" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_52" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="52">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: subtotal of ORDERS -->
+        <mxCell id="53" value="subtotal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="853" y="1282" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_53" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="53">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: pajak of ORDERS -->
+        <mxCell id="54" value="pajak" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="753" y="1255" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_54" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="54">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: biaya_layanan of ORDERS -->
+        <mxCell id="55" value="biaya_layanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="679" y="1182" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_55" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="55">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: status of ORDERS -->
+        <mxCell id="56" value="status" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="653" y="1082" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_56" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="56">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: tipe_layanan of ORDERS -->
+        <mxCell id="57" value="tipe_layanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="679" y="982" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_57" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="57">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: metode_pembayaran of ORDERS -->
+        <mxCell id="58" value="metode_pembayaran" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="752" y="908" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_58" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="58">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: waktu_pesan of ORDERS -->
+        <mxCell id="59" value="waktu_pesan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="853" y="882" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_59" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: waktu_selesai of ORDERS -->
+        <mxCell id="60" value="waktu_selesai" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="953" y="908" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_60" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="60">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: waktu_estimasi of ORDERS -->
+        <mxCell id="61" value="waktu_estimasi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1026" y="981" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_61" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: tanggal_transaksi of ORDERS -->
+        <mxCell id="62" value="tanggal_transaksi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1171" y="1167" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_62" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="62">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: alamat_pengiriman of ORDERS -->
+        <mxCell id="63" value="alamat_pengiriman" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1086" y="1315" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_63" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="63">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: biaya_pengiriman of ORDERS -->
+        <mxCell id="64" value="biaya_pengiriman" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="938" y="1400" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_64" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="64">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: catatan_khusus of ORDERS -->
+        <mxCell id="65" value="catatan_khusus" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="767" y="1400" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_65" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: latitude of ORDERS -->
+        <mxCell id="66" value="latitude" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="619" y="1315" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_66" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="66">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: longitude of ORDERS -->
+        <mxCell id="67" value="longitude" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="534" y="1167" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_67" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="67">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: rating of ORDERS -->
+        <mxCell id="68" value="rating" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="534" y="996" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_68" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="68">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: catatan_rating of ORDERS -->
+        <mxCell id="69" value="catatan_rating" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="619" y="848" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_69" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="69">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: waktu_rating of ORDERS -->
+        <mxCell id="70" value="waktu_rating" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="767" y="763" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_70" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: bukti_pembayaran_url of ORDERS -->
+        <mxCell id="71" value="bukti_pembayaran_url" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="938" y="763" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_71" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="71">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: nama_pelanggan of ORDERS -->
+        <mxCell id="72" value="nama_pelanggan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1086" y="848" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_72" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="72">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: hp_pelanggan of ORDERS -->
+        <mxCell id="73" value="hp_pelanggan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1171" y="996" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_73" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="15" target="73">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_detail of DETAIL -->
+        <mxCell id="74" value="id_detail" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="1557" y="1123" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_74" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="16" target="74">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_order of DETAIL -->
+        <mxCell id="75" value="id_order" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1444" y="1236" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_75" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="16" target="75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_menu of DETAIL -->
+        <mxCell id="76" value="id_menu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1289" y="1195" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_76" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="16" target="76">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: qty of DETAIL -->
+        <mxCell id="77" value="qty" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1248" y="1040" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_77" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="16" target="77">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: harga of DETAIL -->
+        <mxCell id="78" value="harga" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1361" y="927" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_78" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="16" target="78">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: catatan of DETAIL -->
+        <mxCell id="79" value="catatan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1516" y="968" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_79" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="16" target="79">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: id_menu of MENU -->
+        <mxCell id="80" value="id_menu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="2093" y="1082" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_80" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="80">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: nama of MENU -->
+        <mxCell id="81" value="nama" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="2062" y="1184" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_81" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="81">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: desk of MENU -->
+        <mxCell id="82" value="desk" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1981" y="1254" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_82" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="82">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: harga of MENU -->
+        <mxCell id="83" value="harga" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1875" y="1270" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_83" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="83">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: gambar of MENU -->
+        <mxCell id="84" value="gambar" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1778" y="1225" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_84" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="84">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: kategori of MENU -->
+        <mxCell id="85" value="kategori" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="1135" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_85" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="85">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: stok of MENU -->
+        <mxCell id="86" value="stok" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="1028" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_86" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="86">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: terlaris of MENU -->
+        <mxCell id="87" value="terlaris" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1778" y="938" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_87" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="87">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: baru of MENU -->
+        <mxCell id="88" value="baru" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1875" y="893" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_88" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="88">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: tersedia of MENU -->
+        <mxCell id="89" value="tersedia" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1981" y="909" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_89" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="89">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Attribute: resep of MENU -->
+        <mxCell id="90" value="resep" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=9;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="2062" y="979" width="94" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="link_attr_90" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="17" target="90">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Relationship: direstok -->
+        <mxCell id="91" value="direstok" style="rhombus;whiteSpace=wrap;html=1;fillColor=#00a896;strokeColor=#000000;fontStyle=1;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="520" y="225" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel1_91" value="N" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="10" target="91">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel2_91" value="1" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="11" target="91">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Relationship: mencatat -->
+        <mxCell id="92" value="mencatat" style="rhombus;whiteSpace=wrap;html=1;fillColor=#00a896;strokeColor=#000000;fontStyle=1;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="195" y="650" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel1_92" value="N" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="10" target="92">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel2_92" value="1" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="14" target="92">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Relationship: memiliki -->
+        <mxCell id="93" value="memiliki" style="rhombus;whiteSpace=wrap;html=1;fillColor=#00a896;strokeColor=#000000;fontStyle=1;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="682" y="350" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel1_93" value="M" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="13" target="93">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel2_93" value="1" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="11" target="93">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Relationship: melakukan -->
+        <mxCell id="94" value="melakukan" style="rhombus;whiteSpace=wrap;html=1;fillColor=#00a896;strokeColor=#000000;fontStyle=1;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1075" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel1_94" value="1" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="14" target="94">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel2_94" value="N" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="15" target="94">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Relationship: memiliki -->
+        <mxCell id="95" value="memiliki" style="rhombus;whiteSpace=wrap;html=1;fillColor=#00a896;strokeColor=#000000;fontStyle=1;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="1075" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel1_95" value="1" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="15" target="95">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel2_95" value="N" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="16" target="95">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Relationship: merujuk -->
+        <mxCell id="96" value="merujuk" style="rhombus;whiteSpace=wrap;html=1;fillColor=#00a896;strokeColor=#000000;fontStyle=1;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1645" y="1075" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel1_96" value="N" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="16" target="96">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel2_96" value="1" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="17" target="96">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <!-- Relationship: menggunakan -->
+        <mxCell id="97" value="menggunakan" style="rhombus;whiteSpace=wrap;html=1;fillColor=#00a896;strokeColor=#000000;fontStyle=1;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="650" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel1_97" value="N" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="11" target="97">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_rel2_97" value="M" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="17" target="97">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -7,6 +7,7 @@ import '../../../../data/models/order_model.dart';
 import '../../../../core/utils/translator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
+import 'digital_receipt_screen.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
   final OrderModel order;
@@ -36,6 +37,7 @@ class OrderDetailsScreen extends StatelessWidget {
             _buildMainCard(context, authVM, liveOrder),
             const SizedBox(height: 24),
             _buildStatusTimeline(authVM, liveOrder),
+            _buildReceiptButton(context, authVM, liveOrder),
             if (liveOrder.serviceType == ServiceType.delivery) ...[
               const SizedBox(height: 24),
               _buildLocationCard(authVM, liveOrder),
@@ -441,8 +443,8 @@ class OrderDetailsScreen extends StatelessWidget {
 
   Widget _buildContactCard(AuthViewModel authVM, OrderModel currentOrder) {
     // Store contact info — use a fixed admin/store WhatsApp number
-    const String storeWhatsApp = '6281234567890'; // Replace with actual store number
-    const String storeName = 'Warung Gado-Gado Mpo Lemez';
+    const String storeWhatsApp = '6282114255840'; // Replace with actual store number
+    const String storeName = 'Warung Mpo Lemez';
 
     return Container(
       width: double.infinity,
@@ -547,6 +549,82 @@ class OrderDetailsScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildReceiptButton(BuildContext context, AuthViewModel authVM, OrderModel currentOrder) {
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(top: 24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(24),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DigitalReceiptScreen(order: currentOrder),
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFFFF3E0),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.receipt_long_rounded,
+                    color: Color(0xFFE65100),
+                    size: 24,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        authVM.selectedLanguage == 'id' ? 'Nota Digital Pemesanan' : 'Digital Sales Receipt',
+                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black87),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        authVM.selectedLanguage == 'id' 
+                            ? 'Klik untuk melihat rincian nota penjualan resmi' 
+                            : 'Click to view official receipt details',
+                        style: TextStyle(color: Colors.grey.shade500, fontSize: 11),
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.grey.shade400,
+                  size: 16,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
 }
 
 class _TimelineStage {
@@ -665,7 +743,6 @@ class _LocationCardContentState extends State<_LocationCardContent> {
       ),
     );
   }
-
 }
 
 class _DeliveryMap extends StatefulWidget {

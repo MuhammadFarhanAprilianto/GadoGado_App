@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/utils/translator.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/formatter.dart';
 import 'package:gado_gado_app/data/models/raw_ingredient_model.dart';
 import 'package:gado_gado_app/presentation/auth/viewmodels/auth_viewmodel.dart';
 import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dart';
@@ -184,13 +185,27 @@ class AdminStockTab extends StatelessWidget {
           ),
         ),
         title: Text(ingredient.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-        subtitle: Row(
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('${ingredient.amount} ${ingredient.unit}', style: const TextStyle(fontSize: 12, color: Color(0xFF9E4E09))),
-            if (ingredient.isLowStock) ...[
-            const SizedBox(width: 8),
-            Text(Translator.translate('stock_low_stock', context.read<AuthViewModel>().selectedLanguage), style: const TextStyle(color: Colors.red, fontSize: 10, fontWeight: FontWeight.w900)),
-            ]
+            const SizedBox(height: 4),
+            Row(
+              children: [
+                Text(
+                  '${ingredient.amount.toCleanString()} ${ingredient.unit}',
+                  style: const TextStyle(fontSize: 12, color: Color(0xFF9E4E09), fontWeight: FontWeight.bold),
+                ),
+                if (ingredient.isLowStock) ...[
+                  const SizedBox(width: 8),
+                  Text(
+                    Translator.translate('stock_low_stock', context.read<AuthViewModel>().selectedLanguage),
+                    style: const TextStyle(color: Colors.red, fontSize: 10, fontWeight: FontWeight.w900),
+                  ),
+                ]
+              ],
+            ),
+            const SizedBox(height: 8),
+            _buildSegmentedIndicator(ingredient),
           ],
         ),
         trailing: const Icon(Icons.edit_note, color: AppColors.primary),
@@ -200,6 +215,48 @@ class AdminStockTab extends StatelessWidget {
             builder: (context) => RestockIngredientScreen(ingredient: ingredient),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSegmentedIndicator(RawIngredientModel ingredient) {
+    double percent = ingredient.amount / (ingredient.minStockThreshold != null && ingredient.minStockThreshold! > 0 ? ingredient.minStockThreshold! * 2 : 10);
+    if (percent > 1.0) percent = 1.0;
+    if (percent < 0.0) percent = 0.0;
+
+    int activeBars = (percent * 5).round();
+    if (activeBars < 1 && percent > 0) activeBars = 1;
+    if (activeBars > 5) activeBars = 5;
+    if (percent <= 0) activeBars = 0;
+
+    Color color;
+    if (activeBars >= 5) {
+      color = const Color(0xFF00C853); // Bright Green
+    } else if (activeBars >= 2) {
+      color = const Color(0xFFFBC02D); // Yellow/Amber
+    } else {
+      color = const Color(0xFFD32F2F); // Red
+    }
+
+    return SizedBox(
+      width: 140,
+      child: Row(
+        children: List.generate(5, (index) {
+          bool isActive = index < activeBars;
+          return Expanded(
+            child: Container(
+              height: 5,
+              margin: EdgeInsets.only(
+                left: index == 0 ? 0 : 3,
+                right: index == 4 ? 0 : 3,
+              ),
+              decoration: BoxDecoration(
+                color: isActive ? color : Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(2.5),
+              ),
+            ),
+          );
+        }),
       ),
     );
   }

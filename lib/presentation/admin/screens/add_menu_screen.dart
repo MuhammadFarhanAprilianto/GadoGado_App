@@ -57,7 +57,7 @@ class _AddMenuScreenState extends State<AddMenuScreen> {
             Icon(Icons.restaurant_menu, color: AppColors.primary, size: 28),
             SizedBox(width: 8),
             Text(
-              'Mpo Lemezz',
+              'Warung Mpo Lemez',
               style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w900, fontSize: 24),
             ),
           ],

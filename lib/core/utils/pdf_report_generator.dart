@@ -150,7 +150,7 @@ class PdfReportGenerator {
                   ),
                   pw.SizedBox(height: 2),
                   pw.Text(
-                    'Mpo Lemez • GadoGado App',
+                    'Warung Mpo Lemez',
                     style: pw.TextStyle(color: _whiteSubtle, fontSize: 9),
                   ),
                 ],

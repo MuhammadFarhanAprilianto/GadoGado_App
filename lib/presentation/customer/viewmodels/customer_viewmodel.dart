@@ -208,12 +208,40 @@ class CustomerViewModel extends ChangeNotifier {
         // If DB is empty, seed initial data for the user
         _bootstrapMenu();
       } else {
-        _menuItems = snapshot.docs
-            .map((doc) => FoodItemModel.fromFirestore(doc.data(), doc.id))
-            .toList();
+        final List<FoodItemModel> items = [];
+        for (var doc in snapshot.docs) {
+          try {
+            items.add(FoodItemModel.fromFirestore(doc.data(), doc.id));
+          } catch (e, stack) {
+            debugPrint('Error parsing menu item ${doc.id} in CustomerViewModel: $e');
+            debugPrint(stack.toString());
+          }
+        }
+        _menuItems = items;
         notifyListeners();
       }
+    }, onError: (error) {
+      debugPrint('CUSTOMER MENU STREAM ERROR: $error');
     });
+  }
+
+  Future<void> refreshMenu() async {
+    try {
+      final snapshot = await _firestore.collection('menu').get();
+      final List<FoodItemModel> items = [];
+      for (var doc in snapshot.docs) {
+        try {
+          items.add(FoodItemModel.fromFirestore(doc.data(), doc.id));
+        } catch (e, stack) {
+          debugPrint('Error parsing menu item ${doc.id} in refreshMenu: $e');
+          debugPrint(stack.toString());
+        }
+      }
+      _menuItems = items;
+      notifyListeners();
+    } catch (e) {
+      debugPrint('Error refreshing menu in CustomerViewModel: $e');
+    }
   }
 
   void _listenToShopStatus() {
@@ -262,11 +290,15 @@ class CustomerViewModel extends ChangeNotifier {
         .listen((ordersSnapshot) {
       _orderDocs = ordersSnapshot.docs;
       _rebuildOrders();
+    }, onError: (error) {
+      debugPrint('CUSTOMER ORDERS STREAM ERROR: $error');
     });
 
     _detailsSub = _firestore.collection('detail').snapshots().listen((detailsSnapshot) {
       _detailDocs = detailsSnapshot.docs;
       _rebuildOrders();
+    }, onError: (error) {
+      debugPrint('CUSTOMER DETAILS STREAM ERROR: $error');
     });
   }
 
@@ -280,40 +312,58 @@ class CustomerViewModel extends ChangeNotifier {
     final List<OrderModel> rebuilt = [];
 
     for (var orderDoc in _orderDocs) {
-      final orderData = orderDoc.data() as Map<String, dynamic>;
-      final orderId = orderDoc.id;
+      try {
+        final orderData = orderDoc.data() as Map<String, dynamic>?;
+        if (orderData == null) continue;
+        final orderId = orderDoc.id;
 
-      final orderDetails = _detailDocs.where((d) => d['id_order'] == orderId).toList();
-      
-      final List<CartItemModel> items = [];
-      for (var det in orderDetails) {
-        final detData = det.data() as Map<String, dynamic>;
-        final menuId = detData['id_menu'] ?? '';
-        final normalizedId = MenuIdHelper.normalizeMenuId(menuId);
-        final quantity = (detData['jml'] ?? 0).toInt();
-        final price = (detData['harga'] ?? 0).toDouble();
-        final notes = detData['catatan'] as String?;
+        final orderDetails = _detailDocs.where((d) {
+          try {
+            final data = d.data() as Map<String, dynamic>?;
+            return data != null && data['id_order'] == orderId;
+          } catch (_) {
+            return false;
+          }
+        }).toList();
+        
+        final List<CartItemModel> items = [];
+        for (var det in orderDetails) {
+          try {
+            final detData = det.data() as Map<String, dynamic>;
+            final menuId = detData['id_menu'] ?? '';
+            final normalizedId = MenuIdHelper.normalizeMenuId(menuId);
+            final quantity = (detData['jml'] ?? 0).toInt();
+            final price = (detData['harga'] ?? 0).toDouble();
+            final notes = detData['catatan'] as String?;
 
-        final foodItem = _menuItems.firstWhere(
-          (m) => m.id == normalizedId,
-          orElse: () => FoodItemModel(
-            id: menuId,
-            name: detData['nama_menu'] ?? 'Menu Telah Dihapus',
-            description: '',
-            price: price,
-            image: '',
-            category: '',
-          ),
-        );
+            final foodItem = _menuItems.firstWhere(
+              (m) => m.id == normalizedId,
+              orElse: () => FoodItemModel(
+                id: menuId,
+                name: detData['nama_menu'] ?? 'Menu Telah Dihapus',
+                description: '',
+                price: price,
+                image: '',
+                category: '',
+              ),
+            );
 
-        items.add(CartItemModel(
-          foodItem: foodItem.copyWith(price: price),
-          quantity: quantity,
-          notes: notes,
-        ));
+            items.add(CartItemModel(
+              foodItem: foodItem.copyWith(price: price),
+              quantity: quantity,
+              notes: notes,
+            ));
+          } catch (e, stack) {
+            debugPrint('Error parsing order detail item: $e');
+            debugPrint(stack.toString());
+          }
+        }
+
+        rebuilt.add(OrderModel.fromFirestore(orderData, orderId, items: items));
+      } catch (e, stack) {
+        debugPrint('Error parsing order ${orderDoc.id} in CustomerViewModel: $e');
+        debugPrint(stack.toString());
       }
-
-      rebuilt.add(OrderModel.fromFirestore(orderData, orderId, items: items));
     }
 
     _orders = rebuilt;
@@ -502,7 +552,9 @@ class CustomerViewModel extends ChangeNotifier {
           final notes = cartItem.notes!.toLowerCase();
           for (var topping in _toppings) {
             if (notes.contains(topping.name.toLowerCase()) && topping.ingredientId.isNotEmpty) {
-              final docRef = _firestore.collection('bahan').doc(topping.ingredientId);
+              final resolvedIngredient = InventoryService.findIngredientByIdOrName(topping.ingredientId, _ingredients);
+              final targetId = resolvedIngredient?.id ?? topping.ingredientId;
+              final docRef = _firestore.collection('bahan').doc(targetId);
               batch.update(docRef, {
                 'stok': FieldValue.increment(-1.0 * cartItem.quantity),
               });
@@ -661,7 +713,7 @@ class CustomerViewModel extends ChangeNotifier {
           RecipeItemModel(ingredientId: getIngId('Tahu'), ingredientName: 'Tahu', quantityPerPortion: 2), // 2 pcs
           RecipeItemModel(ingredientId: getIngId('Tempe'), ingredientName: 'Tempe', quantityPerPortion: 2), // 2 pcs
           RecipeItemModel(ingredientId: getIngId('Lontong'), ingredientName: 'Lontong', quantityPerPortion: 1), // 1 pc
-          RecipeItemModel(ingredientId: getIngId('Telur'), ingredientName: 'Telur', quantityPerPortion: 1), // 1 pc
+          RecipeItemModel(ingredientId: getIngId('Telur'), ingredientName: 'Telur', quantityPerPortion: 0.06), // 1 pc (~60g)
         ],
       ),
       FoodItemModel(

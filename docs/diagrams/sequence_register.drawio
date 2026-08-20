@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-07-01T14:15:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="sequence-register" name="Page-1">
+    <mxGraphModel dx="1200" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ll_Pelanggan_top" value="Pelanggan" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="50" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_Pelanggan_line" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="ll_Pelanggan_top">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="110" as="sourcePoint" />
+            <mxPoint x="80" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ll_HalamanRegistrasi_top" value="HalamanRegistrasi" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#ffffff;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_HalamanRegistrasi_line" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="ll_HalamanRegistrasi_top">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="110" as="sourcePoint" />
+            <mxPoint x="240" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ll_AuthService_top" value="AuthService" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#ffffff;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_AuthService_line" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="ll_AuthService_top">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="110" as="sourcePoint" />
+            <mxPoint x="410" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ll_FirebaseAuth_top" value="FirebaseAuth" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#ffffff;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_FirebaseAuth_line" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="ll_FirebaseAuth_top">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="110" as="sourcePoint" />
+            <mxPoint x="580" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ll_FirestoreService_top" value="FirestoreService" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#ffffff;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_FirestoreService_line" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="ll_FirestoreService_top">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="110" as="sourcePoint" />
+            <mxPoint x="750" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ll_CloudFirestore_top" value="CloudFirestore" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#ffffff;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_CloudFirestore_line" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1" source="ll_CloudFirestore_top">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="110" as="sourcePoint" />
+            <mxPoint x="920" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act_halaman" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="234" y="160" width="12" height="740" as="geometry" />
+        </mxCell>
+        <mxCell id="act_auth_srv" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="404" y="200" width="12" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="act_firebase_auth" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="574" y="220" width="12" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="act_firestore_srv" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="744" y="520" width="12" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="act_cloud_firestore" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="914" y="550" width="12" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="msg1" value="Masukkan nama, email, no telepon &amp; password" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="160" as="sourcePoint" />
+            <mxPoint x="240" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="Klik Tombol Daftar" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="195" as="sourcePoint" />
+            <mxPoint x="240" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="register(name, email, phone, password)" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="210" as="sourcePoint" />
+            <mxPoint x="410" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="createUserWithEmailAndPassword(email, password)" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="230" as="sourcePoint" />
+            <mxPoint x="580" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- Alt Frame for Auth -->
+        <mxCell id="alt_frame" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=18;tabPosition=left;fillColor=none;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="255" width="860" height="605" as="geometry" />
+        </mxCell>
+        <mxCell id="alt_text" value="alt" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="255" width="40" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="alt_divider" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="450" as="sourcePoint" />
+            <mxPoint x="980" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cond_gagal" value="[Registrasi Gagal]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="265" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_sukses" value="[Registrasi Sukses]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="460" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="msg_fail1" value="FirebaseAuthException" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="310" as="sourcePoint" />
+            <mxPoint x="410" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_fail2" value="Error (Pesan Kesalahan)" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="360" as="sourcePoint" />
+            <mxPoint x="240" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_fail3" value="Tampilkan Pesan Error" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="410" as="sourcePoint" />
+            <mxPoint x="80" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ1" value="UserCredential (Sukses)" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="495" as="sourcePoint" />
+            <mxPoint x="410" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ2" value="saveUserProfile(uid, name, email, phone)" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="525" as="sourcePoint" />
+            <mxPoint x="750" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ3" value="set document /users/User_XX" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="555" as="sourcePoint" />
+            <mxPoint x="920" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ4" value="success" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="610" as="sourcePoint" />
+            <mxPoint x="750" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ5" value="success" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="640" as="sourcePoint" />
+            <mxPoint x="410" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ6" value="signOut()" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="685" as="sourcePoint" />
+            <mxPoint x="580" y="685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ7" value="success" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="730" as="sourcePoint" />
+            <mxPoint x="410" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ8" value="success" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="780" as="sourcePoint" />
+            <mxPoint x="240" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg_succ9" value="Tampilkan Dialog Sukses" style="endArrow=open;dashed=1;endSize=8;html=1;rounded=0;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="825" as="sourcePoint" />
+            <mxPoint x="80" y="825" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

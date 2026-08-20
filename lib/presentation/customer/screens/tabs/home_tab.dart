@@ -41,8 +41,12 @@ class HomeTab extends StatelessWidget {
           const SizedBox(width: 8),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
+      body: RefreshIndicator(
+        onRefresh: () => customerVM.refreshMenu(),
+        color: const Color(0xFFBF360C),
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (customerVM.shopStatus != ShopStatus.open)
@@ -229,7 +233,7 @@ class HomeTab extends StatelessWidget {
             const SizedBox(height: 100), // Reserve space for cart FAB
           ],
         ),
-      ),
+      )),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 20, right: 10),
         child: FloatingActionButton(

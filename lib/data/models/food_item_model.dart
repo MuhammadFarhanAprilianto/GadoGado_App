@@ -15,10 +15,17 @@ class RecipeItemModel {
   });
 
   factory RecipeItemModel.fromMap(Map<String, dynamic> map) {
+    final name = map['nama_bahan'] ?? map['ingredientName'] ?? '';
+    double qty = (map['jumlah_per_porsi'] ?? map['quantityPerPortion'] ?? 0).toDouble();
+    // If the ingredient is Telur and the quantity is set to 1 (piece),
+    // convert it to 0.06 kg to match the database unit.
+    if (name.toLowerCase() == 'telur' && (qty == 1.0 || qty == 1)) {
+      qty = 0.06;
+    }
     return RecipeItemModel(
       ingredientId: map['id_bahan'] ?? map['ingredientId'] ?? '',
-      ingredientName: map['nama_bahan'] ?? map['ingredientName'] ?? '',
-      quantityPerPortion: (map['jumlah_per_porsi'] ?? map['quantityPerPortion'] ?? 0).toDouble(),
+      ingredientName: name,
+      quantityPerPortion: qty,
     );
   }
 

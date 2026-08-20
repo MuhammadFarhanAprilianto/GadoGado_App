@@ -1,5 +1,5 @@
 class AppConstants {
-  static const String appName = 'Mpo Lemezz POS';
+  static const String appName = 'Warung Mpo Lemez';
   
   // Roles
   static const String roleCustomer = 'pelanggan';

@@ -45,7 +45,7 @@ class MpoLemezzApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mpo Lemezz POS',
+      title: 'Warung Mpo Lemez',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       home: Consumer<AuthViewModel>(

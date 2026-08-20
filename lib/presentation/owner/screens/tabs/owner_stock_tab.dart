@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/formatter.dart';
 import 'package:provider/provider.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
 import '../../../admin/viewmodels/admin_view_model.dart';
@@ -168,7 +169,7 @@ class OwnerStockTab extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            Text('Pilih jumlah untuk ditambahkan ke stok saat ini (${ingredient.amount} ${ingredient.unit})', style: const TextStyle(color: Colors.grey, fontSize: 13)),
+            Text('Pilih jumlah untuk ditambahkan ke stok saat ini (${(ingredient.amount as double).toCleanString()} ${ingredient.unit})', style: const TextStyle(color: Colors.grey, fontSize: 13)),
             const SizedBox(height: 24),
             GridView.count(
               shrinkWrap: true,
@@ -276,7 +277,7 @@ class OwnerStockTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       const Text('STOK SAAT INI', style: TextStyle(color: Colors.grey, fontSize: 8, fontWeight: FontWeight.bold)),
-                      Text('${item.amount} ${item.unit}', style: const TextStyle(fontWeight: FontWeight.bold)),
+                      Text('${(item.amount as double).toCleanString()} ${item.unit}', style: const TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
                   const SizedBox(width: 12),
@@ -304,16 +305,46 @@ class OwnerStockTab extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 8),
-              LinearProgressIndicator(
-                value: percent,
-                backgroundColor: Colors.grey.shade100,
-                valueColor: AlwaysStoppedAnimation<Color>(isCritical ? Colors.red : AppColors.primary),
-                borderRadius: BorderRadius.circular(10),
-              ),
+              _buildSegmentedIndicator(percent),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildSegmentedIndicator(double percent) {
+    int activeBars = (percent * 5).round();
+    if (activeBars < 1 && percent > 0) activeBars = 1;
+    if (activeBars > 5) activeBars = 5;
+    if (percent <= 0) activeBars = 0;
+
+    Color color;
+    if (activeBars >= 5) {
+      color = const Color(0xFF00C853); // Bright Green
+    } else if (activeBars >= 2) {
+      color = const Color(0xFFFBC02D); // Yellow/Amber
+    } else {
+      color = const Color(0xFFD32F2F); // Red
+    }
+
+    return Row(
+      children: List.generate(5, (index) {
+        bool isActive = index < activeBars;
+        return Expanded(
+          child: Container(
+            height: 6,
+            margin: EdgeInsets.only(
+              left: index == 0 ? 0 : 3,
+              right: index == 4 ? 0 : 3,
+            ),
+            decoration: BoxDecoration(
+              color: isActive ? color : Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(3),
+            ),
+          ),
+        );
+      }),
     );
   }
 }

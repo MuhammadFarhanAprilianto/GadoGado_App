@@ -78,10 +78,19 @@ class OwnerViewModel extends ChangeNotifier {
 
   void _listenToMenu() {
     _menuSub = _firestore.collection('menu').snapshots().listen((snapshot) {
-      _menuItems = snapshot.docs
-          .map((doc) => FoodItemModel.fromFirestore(doc.data(), doc.id))
-          .toList();
+      final List<FoodItemModel> items = [];
+      for (var doc in snapshot.docs) {
+        try {
+          items.add(FoodItemModel.fromFirestore(doc.data(), doc.id));
+        } catch (e, stack) {
+          debugPrint('Error parsing menu item ${doc.id} in OwnerViewModel: $e');
+          debugPrint(stack.toString());
+        }
+      }
+      _menuItems = items;
       _rebuildOrders();
+    }, onError: (error) {
+      debugPrint('OWNER MENU STREAM ERROR: $error');
     });
   }
 
@@ -95,11 +104,15 @@ class OwnerViewModel extends ChangeNotifier {
         .listen((ordersSnapshot) {
       _orderDocs = ordersSnapshot.docs;
       _rebuildOrders();
+    }, onError: (error) {
+      debugPrint('OWNER ORDERS STREAM ERROR: $error');
     });
 
     _detailsSub = _firestore.collection('detail').snapshots().listen((detailsSnapshot) {
       _detailDocs = detailsSnapshot.docs;
       _rebuildOrders();
+    }, onError: (error) {
+      debugPrint('OWNER DETAILS STREAM ERROR: $error');
     });
   }
 
@@ -114,40 +127,58 @@ class OwnerViewModel extends ChangeNotifier {
     final List<OrderModel> rebuilt = [];
 
     for (var orderDoc in _orderDocs) {
-      final orderData = orderDoc.data() as Map<String, dynamic>;
-      final orderId = orderDoc.id;
+      try {
+        final orderData = orderDoc.data() as Map<String, dynamic>?;
+        if (orderData == null) continue;
+        final orderId = orderDoc.id;
 
-      final orderDetails = _detailDocs.where((d) => d['id_order'] == orderId).toList();
-      
-      final List<CartItemModel> items = [];
-      for (var det in orderDetails) {
-        final detData = det.data() as Map<String, dynamic>;
-        final menuId = detData['id_menu'] ?? '';
-        final normalizedId = MenuIdHelper.normalizeMenuId(menuId);
-        final quantity = (detData['jml'] ?? 0).toInt();
-        final price = (detData['harga'] ?? 0).toDouble();
-        final notes = detData['catatan'] as String?;
+        final orderDetails = _detailDocs.where((d) {
+          try {
+            final data = d.data() as Map<String, dynamic>?;
+            return data != null && data['id_order'] == orderId;
+          } catch (_) {
+            return false;
+          }
+        }).toList();
+        
+        final List<CartItemModel> items = [];
+        for (var det in orderDetails) {
+          try {
+            final detData = det.data() as Map<String, dynamic>;
+            final menuId = detData['id_menu'] ?? '';
+            final normalizedId = MenuIdHelper.normalizeMenuId(menuId);
+            final quantity = (detData['jml'] ?? 0).toInt();
+            final price = (detData['harga'] ?? 0).toDouble();
+            final notes = detData['catatan'] as String?;
 
-        final foodItem = _menuItems.firstWhere(
-          (m) => m.id == normalizedId,
-          orElse: () => FoodItemModel(
-            id: menuId,
-            name: detData['nama_menu'] ?? 'Menu Telah Dihapus',
-            description: '',
-            price: price,
-            image: '',
-            category: '',
-          ),
-        );
+            final foodItem = _menuItems.firstWhere(
+              (m) => m.id == normalizedId,
+              orElse: () => FoodItemModel(
+                id: menuId,
+                name: detData['nama_menu'] ?? 'Menu Telah Dihapus',
+                description: '',
+                price: price,
+                image: '',
+                category: '',
+              ),
+            );
 
-        items.add(CartItemModel(
-          foodItem: foodItem.copyWith(price: price),
-          quantity: quantity,
-          notes: notes,
-        ));
+            items.add(CartItemModel(
+              foodItem: foodItem.copyWith(price: price),
+              quantity: quantity,
+              notes: notes,
+            ));
+          } catch (e, stack) {
+            debugPrint('Error parsing order detail item: $e');
+            debugPrint(stack.toString());
+          }
+        }
+
+        rebuilt.add(OrderModel.fromFirestore(orderData, orderId, items: items));
+      } catch (e, stack) {
+        debugPrint('Error parsing order ${orderDoc.id} in OwnerViewModel: $e');
+        debugPrint(stack.toString());
       }
-
-      rebuilt.add(OrderModel.fromFirestore(orderData, orderId, items: items));
     }
 
     _allOrders = rebuilt;
