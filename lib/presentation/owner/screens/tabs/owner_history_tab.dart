@@ -9,6 +9,7 @@ import '../../providers/owner_navigation_provider.dart';
 import '../../viewmodels/owner_view_model.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
 import '../../../admin/viewmodels/admin_view_model.dart';
+import '../../../widgets/warung_logo.dart';
 
 class OwnerHistoryTab extends StatelessWidget {
   const OwnerHistoryTab({super.key});
@@ -24,13 +25,9 @@ class OwnerHistoryTab extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
         actions: [
           // PDF Print Button

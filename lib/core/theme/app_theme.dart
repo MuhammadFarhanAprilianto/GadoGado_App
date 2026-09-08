@@ -6,6 +6,7 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
+      fontFamily: 'Agrandir',
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
         primary: AppColors.primary,
@@ -14,32 +15,93 @@ class AppTheme {
         error: AppColors.error,
       ),
       scaffoldBackgroundColor: AppColors.background,
-      textTheme: GoogleFonts.outfitTextTheme().copyWith(
-        displayLarge: GoogleFonts.outfit(
+      textTheme: TextTheme(
+        // Headings using Questrial
+        displayLarge: GoogleFonts.questrial(
           fontSize: 32,
           fontWeight: FontWeight.bold,
           color: AppColors.textMain,
         ),
-        headlineMedium: GoogleFonts.outfit(
+        displayMedium: GoogleFonts.questrial(
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+          color: AppColors.textMain,
+        ),
+        displaySmall: GoogleFonts.questrial(
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: AppColors.textMain,
         ),
-        bodyLarge: GoogleFonts.outfit(
+        headlineLarge: GoogleFonts.questrial(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: AppColors.textMain,
+        ),
+        headlineMedium: GoogleFonts.questrial(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: AppColors.textMain,
+        ),
+        headlineSmall: GoogleFonts.questrial(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: AppColors.textMain,
+        ),
+        titleLarge: GoogleFonts.questrial(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          color: AppColors.textMain,
+        ),
+        titleMedium: GoogleFonts.questrial(
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+          color: AppColors.textMain,
+        ),
+        titleSmall: GoogleFonts.questrial(
+          fontSize: 14,
+          fontWeight: FontWeight.w700,
+          color: AppColors.textMain,
+        ),
+
+        // Body / Paragraphs using Agrandir
+        bodyLarge: const TextStyle(
+          fontFamily: 'Agrandir',
           fontSize: 16,
           color: AppColors.textMain,
         ),
-        bodyMedium: GoogleFonts.outfit(
+        bodyMedium: const TextStyle(
+          fontFamily: 'Agrandir',
           fontSize: 14,
           color: AppColors.textSecondary,
         ),
+        bodySmall: const TextStyle(
+          fontFamily: 'Agrandir',
+          fontSize: 12,
+          color: AppColors.textSecondary,
+        ),
+        labelLarge: const TextStyle(
+          fontFamily: 'Agrandir',
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: AppColors.textMain,
+        ),
+        labelMedium: const TextStyle(
+          fontFamily: 'Agrandir',
+          fontSize: 12,
+          color: AppColors.textSecondary,
+        ),
+        labelSmall: const TextStyle(
+          fontFamily: 'Agrandir',
+          fontSize: 11,
+          color: AppColors.textSecondary,
+        ),
       ),
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        iconTheme: IconThemeData(color: AppColors.textMain),
-        titleTextStyle: TextStyle(
+        iconTheme: const IconThemeData(color: AppColors.textMain),
+        titleTextStyle: GoogleFonts.questrial(
           color: AppColors.textMain,
           fontSize: 20,
           fontWeight: FontWeight.bold,
@@ -60,7 +122,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          textStyle: const TextStyle(
+          textStyle: GoogleFonts.questrial(
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),

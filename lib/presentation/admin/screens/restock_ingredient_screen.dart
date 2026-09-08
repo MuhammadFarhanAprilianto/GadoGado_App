@@ -5,6 +5,8 @@ import '../../../../core/utils/translator.dart';
 import 'package:gado_gado_app/data/models/raw_ingredient_model.dart';
 import 'package:gado_gado_app/presentation/auth/viewmodels/auth_viewmodel.dart';
 import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dart';
+import '../../widgets/warung_logo.dart';
+import '../../widgets/responsive_layout.dart';
 
 class RestockIngredientScreen extends StatefulWidget {
   final RawIngredientModel ingredient;
@@ -51,8 +53,9 @@ class _RestockIngredientScreenState extends State<RestockIngredientScreen> {
     final authVM = context.watch<AuthViewModel>();
     final user = authVM.currentUser;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -60,15 +63,9 @@ class _RestockIngredientScreenState extends State<RestockIngredientScreen> {
           icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.primary, size: 20),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Row(
-          children: [
-            Icon(Icons.restaurant_menu, color: AppColors.primary, size: 28),
-            SizedBox(width: 8),
-            Text(
-              'Warung Mpo Lemez',
-              style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w900, fontSize: 24),
-            ),
-          ],
+        title: const Padding(
+          padding: EdgeInsets.only(left: 4.0),
+          child: WarungLogo(height: 38),
         ),
         actions: [
           Padding(
@@ -138,24 +135,25 @@ class _RestockIngredientScreenState extends State<RestockIngredientScreen> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  final double newAmount = double.tryParse(_amountController.text) ?? widget.ingredient.amount;
-                  final double addedAmount = newAmount - widget.ingredient.amount;
-                  final double cost = double.tryParse(_costController.text) ?? 0.0;
+                onPressed: () async {
+                  final cleanAmountText = _amountController.text.trim().replaceAll(',', '.');
+                  final cleanThresholdText = _minThresholdController.text.trim().replaceAll(',', '.');
+                  final cleanCostText = _costController.text.trim().replaceAll(',', '.');
 
-                  if (_amountController.text.isNotEmpty) {
-                    adminVM.updateIngredientAmount(
-                      widget.ingredient.id,
-                      newAmount,
-                    );
-                  }
-                  adminVM.updateIngredientThreshold(
+                  final double newAmount = double.tryParse(cleanAmountText) ?? widget.ingredient.amount;
+                  final double? newThreshold = cleanThresholdText.isNotEmpty ? double.tryParse(cleanThresholdText) : widget.ingredient.minStockThreshold;
+                  final double addedAmount = newAmount - widget.ingredient.amount;
+                  final double cost = double.tryParse(cleanCostText) ?? 0.0;
+
+                  // Perform atomic update for amount & threshold
+                  await adminVM.updateIngredientDetails(
                     widget.ingredient.id,
-                    _minThresholdController.text.isNotEmpty ? double.parse(_minThresholdController.text) : null,
+                    newAmount,
+                    newThreshold,
                   );
 
                   if (addedAmount > 0 && cost > 0) {
-                    adminVM.recordExpense(
+                    await adminVM.recordExpense(
                       widget.ingredient.id,
                       widget.ingredient.name,
                       addedAmount,
@@ -164,10 +162,12 @@ class _RestockIngredientScreenState extends State<RestockIngredientScreen> {
                     );
                   }
 
-                  Navigator.pop(context);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('${widget.ingredient.name} stok diperbarui'), backgroundColor: Colors.green),
-                  );
+                  if (context.mounted) {
+                    Navigator.pop(context);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('${widget.ingredient.name} stok diperbarui'), backgroundColor: Colors.green),
+                    );
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF1B5E20),
@@ -205,8 +205,9 @@ class _RestockIngredientScreenState extends State<RestockIngredientScreen> {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   void _confirmDelete(BuildContext context, AdminViewModel adminVM) {
     final lang = context.read<AuthViewModel>().selectedLanguage;

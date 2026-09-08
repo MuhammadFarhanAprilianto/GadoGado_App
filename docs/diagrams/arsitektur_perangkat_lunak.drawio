@@ -1,0 +1,307 @@
+<mxfile host="app.diagrams.net" modified="2026-08-31T21:12:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
+  <diagram id="arsitektur_fungsional_sistem" name="Arsitektur Fungsional Sistem">
+    <mxGraphModel dx="1200" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1200" pageOrientation="portrait" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title Block -->
+        <mxCell id="title_block" value="&lt;b&gt;Arsitektur Fungsional Sistem&lt;/b&gt;&#xa;Sistem Informasi &amp; Manajemen&#xa;Warung Gado-Gado Mpo Lemez" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="250" y="30" width="350" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- System Boundary / Big Center Box -->
+        <mxCell id="sys_box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="240" y="90" width="370" height="920" as="geometry" />
+        </mxCell>
+
+        <!-- 6 CENTRAL PROCESS BOXES -->
+        <mxCell id="p_pendaftaran" value="Pendaftaran" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="335" y="150" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p_pemesanan" value="Pemesanan &amp; Pembayaran" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="335" y="300" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p_pengiriman" value="Pengiriman &amp; Ongkos Kirim" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="335" y="470" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p_stok" value="Manajemen Stok Bahan Baku" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="335" y="600" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p_menu" value="Manajemen Menu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="335" y="750" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p_laporan" value="Laporan Penjualan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="335" y="870" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Downward Flows Between Central Processes -->
+        <mxCell id="flow_1_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;" edge="1" parent="1" source="p_pendaftaran" target="p_pemesanan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_2_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;" edge="1" parent="1" source="p_pemesanan" target="p_pengiriman">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_3_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;" edge="1" parent="1" source="p_pengiriman" target="p_stok">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_4_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;" edge="1" parent="1" source="p_stok" target="p_menu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_5_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#000000;" edge="1" parent="1" source="p_menu" target="p_laporan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LEFT INPUT BOXES ==================== -->
+        <!-- Group 1: Pendaftaran Inputs -->
+        <mxCell id="in_reg" value="Registrasi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="115" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="in_kred" value="Kredensial Akun" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="152" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="in_prof" value="Data Profil Pengguna" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="189" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 1 Left -->
+        <mxCell id="c_in1_1" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="128" as="sourcePoint" /><mxPoint x="275" y="128" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in1_2" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="165" as="sourcePoint" /><mxPoint x="275" y="165" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in1_3" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="202" as="sourcePoint" /><mxPoint x="275" y="202" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in1_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="275" y="128" as="sourcePoint" /><mxPoint x="275" y="202" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in1_arr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="p_pendaftaran">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="275" y="165" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Group 2: Pemesanan & Pembayaran Inputs -->
+        <mxCell id="in_menu_opt" value="Memilih Menu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="260" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="in_tipe_lay" value="Tipe Layanan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="297" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="in_bukti_tf" value="Bukti Transfer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="334" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="in_alamat" value="Alamat Fisik Pengiriman" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="371" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 2 Left -->
+        <mxCell id="c_in2_1" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="273" as="sourcePoint" /><mxPoint x="275" y="273" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in2_2" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="310" as="sourcePoint" /><mxPoint x="275" y="310" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in2_3" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="347" as="sourcePoint" /><mxPoint x="275" y="347" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in2_4" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="384" as="sourcePoint" /><mxPoint x="275" y="384" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in2_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="275" y="273" as="sourcePoint" /><mxPoint x="275" y="384" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in2_arr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="p_pemesanan">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="275" y="315" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Group 3: Pengiriman Inputs -->
+        <mxCell id="in_prog_kurir" value="Status Progress Kurir" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="472" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c_in3_arr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" source="in_prog_kurir" target="p_pengiriman">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Group 4: Manajemen Stok Inputs -->
+        <mxCell id="in_stk_masuk" value="Update Stok Masuk" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="565" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="in_resep" value="Komposisi Resep Menu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="602" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="in_min_stk" value="Ambang Batas Minimun" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="639" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 4 Left -->
+        <mxCell id="c_in4_1" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="578" as="sourcePoint" /><mxPoint x="275" y="578" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in4_2" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="615" as="sourcePoint" /><mxPoint x="275" y="615" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in4_3" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="210" y="652" as="sourcePoint" /><mxPoint x="275" y="652" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in4_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="275" y="578" as="sourcePoint" /><mxPoint x="275" y="652" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_in4_arr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="p_stok">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="275" y="615" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Group 5: Manajemen Menu Inputs -->
+        <mxCell id="in_menu" value="Menu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="30" y="752" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c_in5_arr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" source="in_menu" target="p_menu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== RIGHT OUTPUT BOXES ==================== -->
+        <!-- Group 1: Pendaftaran Outputs -->
+        <mxCell id="out_token" value="Token Otentifikasi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="115" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_hak" value="Hak Akses" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="152" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_profil_act" value="Profil Pengguna Aktif" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="189" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 1 Right -->
+        <mxCell id="c_out1_h" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="515" y="165" as="sourcePoint" /><mxPoint x="575" y="165" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out1_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="128" as="sourcePoint" /><mxPoint x="575" y="202" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out1_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_token">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="128" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out1_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_hak">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="165" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out1_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_profil_act">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="202" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Group 2: Pemesanan & Pembayaran Outputs -->
+        <mxCell id="out_nota" value="Nota Digital" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="278" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_catatan" value="Catatan Pesanan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="315" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_ongkir" value="Biaya Ongkir" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="352" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 2 Right -->
+        <mxCell id="c_out2_h" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="515" y="315" as="sourcePoint" /><mxPoint x="575" y="315" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out2_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="291" as="sourcePoint" /><mxPoint x="575" y="365" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out2_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_nota">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="291" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out2_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_catatan">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="315" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out2_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_ongkir">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="365" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Group 3: Pengiriman Outputs -->
+        <mxCell id="out_jarak" value="Jarak Pengantaran" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="472" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="c_out3_arr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" source="p_pengiriman" target="out_jarak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Group 4: Manajemen Stok Outputs -->
+        <mxCell id="out_logistik" value="Logistik Bahan Baku" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="565" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_potong_stk" value="Potong Stok Otomatis" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="602" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_alert_stk" value="Notifikasi Stok Kritis" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="639" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 4 Right -->
+        <mxCell id="c_out4_h" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="515" y="615" as="sourcePoint" /><mxPoint x="575" y="615" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out4_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="578" as="sourcePoint" /><mxPoint x="575" y="652" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out4_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_logistik">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="578" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out4_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_potong_stk">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="615" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out4_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_alert_stk">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="652" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Group 5: Manajemen Menu Outputs -->
+        <mxCell id="out_kat_aktif" value="Katalog Menu Aktif" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="735" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_info_hrg" value="Informasi Harga &amp; Detail Menu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="772" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 5 Right -->
+        <mxCell id="c_out5_h" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="515" y="765" as="sourcePoint" /><mxPoint x="575" y="765" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out5_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="748" as="sourcePoint" /><mxPoint x="575" y="785" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out5_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_kat_aktif">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="748" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out5_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_info_hrg">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="785" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+        <!-- Group 6: Laporan Penjualan Outputs -->
+        <mxCell id="out_omset" value="Grafik Omset Per-Minggu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="855" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="out_lap_penjualan" value="Laporan Penjualan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="640" y="892" width="180" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors Group 6 Right -->
+        <mxCell id="c_out6_h" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="515" y="885" as="sourcePoint" /><mxPoint x="575" y="885" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out6_v" style="endArrow=none;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="868" as="sourcePoint" /><mxPoint x="575" y="905" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out6_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_omset">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="868" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c_out6_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;strokeColor=#000000;" edge="1" parent="1" target="out_lap_penjualan">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="575" y="905" as="sourcePoint" /></mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

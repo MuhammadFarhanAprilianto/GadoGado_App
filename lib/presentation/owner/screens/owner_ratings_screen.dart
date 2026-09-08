@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import '../viewmodels/owner_view_model.dart';
+import '../../widgets/responsive_layout.dart';
 
 class OwnerRatingsScreen extends StatelessWidget {
   const OwnerRatingsScreen({super.key});
@@ -14,8 +15,9 @@ class OwnerRatingsScreen extends StatelessWidget {
         .toList()
       ..sort((a, b) => b.timestamp.compareTo(a.timestamp));
 
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Customer Feedback', style: TextStyle(fontWeight: FontWeight.bold)),
         elevation: 0,
@@ -86,6 +88,7 @@ class OwnerRatingsScreen extends StatelessWidget {
                 );
               },
             ),
+      ),
     );
   }
 }

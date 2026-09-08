@@ -1,11 +1,11 @@
 {
-    "name": "gado_gado_app",
-    "short_name": "gado_gado_app",
+    "name": "Warung Gado Gado Mpo Lemez",
+    "short_name": "Mpo Lemez",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FF7A00",
+    "theme_color": "#FF7A00",
+    "description": "Aplikasi Pemesanan & Manajemen Warung Gado Gado Mpo Lemez",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

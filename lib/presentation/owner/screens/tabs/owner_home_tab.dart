@@ -10,6 +10,7 @@ import '../../../auth/viewmodels/auth_viewmodel.dart';
 import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dart';
 import 'package:gado_gado_app/presentation/admin/screens/restock_ingredient_screen.dart';
 import 'package:gado_gado_app/presentation/admin/screens/admin_order_details_screen.dart';
+import '../../../widgets/warung_logo.dart';
 
 class OwnerHomeTab extends StatelessWidget {
   const OwnerHomeTab({super.key});
@@ -27,13 +28,9 @@ class OwnerHomeTab extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
         actions: [
           Padding(

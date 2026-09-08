@@ -5,6 +5,7 @@ import '../../../../data/models/shop_settings_model.dart';
 import '../../../../core/utils/translator.dart';
 import '../../auth/viewmodels/auth_viewmodel.dart';
 import '../viewmodels/customer_viewmodel.dart';
+import '../../widgets/responsive_layout.dart';
 import 'order_summary_screen.dart';
 
 class CartScreen extends StatelessWidget {
@@ -15,8 +16,9 @@ class CartScreen extends StatelessWidget {
     final customerVM = context.watch<CustomerViewModel>();
     final authVM = context.watch<AuthViewModel>();
 
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -73,6 +75,7 @@ class CartScreen extends StatelessWidget {
                 _buildBottomSummary(context, customerVM),
               ],
             ),
+      ),
     );
   }
 

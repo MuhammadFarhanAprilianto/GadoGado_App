@@ -11,6 +11,7 @@ import '../viewmodels/customer_viewmodel.dart';
 import '../../../../data/models/order_model.dart';
 import '../../../../core/utils/translator.dart';
 import 'location_picker_screen.dart';
+import '../../widgets/responsive_layout.dart';
 
 class OrderSummaryScreen extends StatelessWidget {
   const OrderSummaryScreen({super.key});
@@ -154,7 +155,7 @@ class OrderSummaryScreen extends StatelessWidget {
     final authVM = context.read<AuthViewModel>();
     final lang = authVM.selectedLanguage;
     try {
-      final ByteData bytes = await rootBundle.load('assets/images/Pembayaran Qris.jpeg');
+      final ByteData bytes = await rootBundle.load('assets/images/pembayaran_qris.jpeg');
       final Uint8List list = bytes.buffer.asUint8List();
 
       await Printing.sharePdf(
@@ -208,8 +209,9 @@ class OrderSummaryScreen extends StatelessWidget {
     final authVM = context.watch<AuthViewModel>();
     final user = authVM.currentUser;
 
-    return Scaffold(
-      backgroundColor: Colors.grey.shade50,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -220,7 +222,8 @@ class OrderSummaryScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: CircleAvatar(
-              radius: 12,
+              radius: 18,
+              backgroundColor: Colors.grey.shade200,
               backgroundImage: user?.profileImageProvider,
             ),
             onPressed: () {},
@@ -291,8 +294,9 @@ class OrderSummaryScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildYourItems(BuildContext context, CustomerViewModel vm) {
     return Container(
@@ -503,15 +507,15 @@ class OrderSummaryScreen extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFFFBE9E7) : Colors.white,
+          color: isSelected ? const Color(0xFFFFF3E0) : Colors.white,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: isSelected ? const Color(0xFFBF360C) : Colors.grey.shade100, width: 1.5),
+          border: Border.all(color: isSelected ? AppColors.primary : Colors.grey.shade100, width: 1.5),
         ),
         child: Column(
           children: [
-            Icon(icon, color: isSelected ? const Color(0xFFBF360C) : Colors.grey.shade400, size: 24),
+            Icon(icon, color: isSelected ? AppColors.primary : Colors.grey.shade400, size: 24),
             const SizedBox(height: 4),
-            Text(label, style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: isSelected ? const Color(0xFFBF360C) : Colors.grey.shade600)),
+            Text(label, style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: isSelected ? AppColors.primary : Colors.grey.shade600)),
           ],
         ),
       ),
@@ -568,7 +572,7 @@ class OrderSummaryScreen extends StatelessWidget {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
-                          child: Image.asset('assets/images/Pembayaran Qris.jpeg', width: 220, height: 320, fit: BoxFit.contain),
+                          child: Image.asset('assets/images/pembayaran_qris.jpeg', width: 220, height: 320, fit: BoxFit.contain),
                         ),
                       ),
                     ),
@@ -674,15 +678,15 @@ class OrderSummaryScreen extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFFFBE9E7) : Colors.white,
+          color: isSelected ? const Color(0xFFFFF3E0) : Colors.white,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: isSelected ? const Color(0xFFBF360C) : Colors.grey.shade100, width: 1.5),
+          border: Border.all(color: isSelected ? AppColors.primary : Colors.grey.shade100, width: 1.5),
         ),
         child: Column(
           children: [
-            Icon(icon, color: isSelected ? const Color(0xFFBF360C) : Colors.grey.shade400, size: 24),
+            Icon(icon, color: isSelected ? AppColors.primary : Colors.grey.shade400, size: 24),
             const SizedBox(height: 4),
-            Text(label, style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: isSelected ? const Color(0xFFBF360C) : Colors.grey.shade600)),
+            Text(label, style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: isSelected ? AppColors.primary : Colors.grey.shade600)),
           ],
         ),
       ),
@@ -713,7 +717,7 @@ class OrderSummaryScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(Translator.translate('summary_grand_total', Provider.of<AuthViewModel>(context, listen: false).selectedLanguage), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900)),
-              Text('Rp ${vm.grandTotal.toInt()}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: Color(0xFFD84315))),
+              Text('Rp ${vm.grandTotal.toInt()}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: AppColors.primaryDark)),
             ],
           ),
         ],
@@ -739,9 +743,9 @@ class OrderSummaryScreen extends StatelessWidget {
       width: double.infinity,
       height: 56,
       decoration: BoxDecoration(
-        color: const Color(0xFFBF360C),
+        color: AppColors.primary,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: const Color(0xFFBF360C).withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 8))],
+        boxShadow: [BoxShadow(color: AppColors.primary.withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 8))],
       ),
       child: ElevatedButton(
         onPressed: onTap,

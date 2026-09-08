@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../../../data/models/order_model.dart';
 import '../viewmodels/customer_viewmodel.dart';
+import '../../widgets/responsive_layout.dart';
 
 class DigitalReceiptScreen extends StatelessWidget {
   final OrderModel order;
@@ -32,8 +33,9 @@ class DigitalReceiptScreen extends StatelessWidget {
     // Calculate tax percentage
     final int taxPercent = order.subtotal > 0 ? ((order.tax / order.subtotal) * 100).round() : 0;
 
-    return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: const Color(0xFFF5F5F5),
       appBar: AppBar(
         title: const Text('Nota Penjualan Digital'),
         leading: IconButton(
@@ -239,8 +241,9 @@ class DigitalReceiptScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildReceiptTextRow(String label, String value) {
     return Padding(

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/translator.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
+import '../../../widgets/responsive_layout.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({super.key});
@@ -63,8 +64,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   Widget build(BuildContext context) {
     final authVM = context.watch<AuthViewModel>();
 
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(Translator.translate('priv_account_security', authVM.selectedLanguage), style: const TextStyle(fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -129,8 +131,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildPasswordField(String label, TextEditingController controller) {
     return Column(

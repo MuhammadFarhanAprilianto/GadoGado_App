@@ -1,0 +1,229 @@
+PANDUAN LENGKAP INSTALASI DAN KONFIGURASI SISTEM
+APLIKASI WARUNG MPO LEMEZ (GADOGADO_APP)
+
+Nama Proyek / Aplikasi : Warung Mpo Lemez - POS & Inventory Management System
+Teknologi Utama        : Flutter SDK & Dart Language
+Target Platform        : Android & iOS (Cross-Platform Mobile Application)
+Pengembang / Penulis   : Muhammad Farhan Aprilianto
+
+
+================================================================================
+BAB I: PENDAHULUAN DAN SPESIFIKASI KEBUTUHAN SISTEM
+================================================================================
+
+1.1 Gambaran Umum Aplikasi
+Aplikasi Warung Mpo Lemez (GadoGado_App) merupakan sebuah sistem aplikasi point of sale (POS) dan manajemen inventaris bahan baku kuliner berbasis mobile multi-peran (multi-role) yang dirancang untuk tiga kategori pengguna utama, yaitu Pelanggan, Admin/Kasir, dan Pemilik Usaha (Owner). Aplikasi ini dibangun dengan menggunakan kerangka kerja (framework) Flutter dan bahasa pemrograman Dart, serta mengadopsi pola arsitektur Model-View-ViewModel (MVVM) yang bersih, modular, dan terintegrasi dengan layanan basis data cloud seperti Firebase dan Supabase.
+
+1.2 Spesifikasi Kebutuhan Perangkat Keras (Hardware Requirements)
+Untuk memastikan proses instalasi, kompilasi (build), dan eksekusi program berjalan lancar, komputer pengembang disarankan memenuhi spesifikasi minimum perangkat keras berikut:
+
++--------------------------+-------------------------------------------------+-----------------------------------------------------------+
+| Komponen Perangkat Keras | Spesifikasi Minimum                             | Spesifikasi Rekomendasi                                   |
++--------------------------+-------------------------------------------------+-----------------------------------------------------------+
+| Prosesor (CPU)           | Intel Core i3 / AMD Ryzen 3 (Quad-Core 2.0 GHz) | Intel Core i5/i7 / AMD Ryzen 5/7 (Hexa-Core+ 3.0 GHz)     |
+| Memori Utama (RAM)       | 8 GB DDR4                                       | 16 GB DDR4 / DDR5 (Sangat disarankan untuk Emulator)       |
+| Penyimpanan (Storage)    | Kapasitas Kosong Minimal 20 GB (HDD/SSD)        | Kapasitas Kosong Minimal 50 GB NVMe SSD                   |
+| Sistem Operasi           | Windows 10 64-bit / macOS 12+ / Linux Ubuntu    | Windows 11 64-bit / macOS Sonoma                          |
+| Koneksi Internet         | Kecepatan minimal 5 Mbps (Unduh dependensi)     | Kecepatan 20+ Mbps stabil dan tidak berpembatas           |
++--------------------------+-------------------------------------------------+-----------------------------------------------------------+
+
+1.3 Spesifikasi Kebutuhan Perangkat Lunak (Software Requirements)
+Perangkat lunak (software) yang wajib dipersiapkan dan dipasang sebelum menjalankan proyek meliputi:
+• Git Version Control System (Versi minimal 2.30.0 atau yang terbaru) untuk manajemen repositori kode sumber.
+• Flutter SDK (Versi stabil stable channel 3.11.4 ke atas) yang telah terintegrasi dengan Dart SDK (Versi ^3.11.4).
+• Android Studio (Versi Ladybug / Koala / Flamingo ke atas) beserta Android SDK Platform (API Level 33 / 34 / 35), Android SDK Command-line Tools, dan Android SDK Build-Tools.
+• Java Development Kit (JDK) (Versi 17 LTS atau OpenJDK 17 yang telah terkonfigurasi pada environment variable JAVA_HOME).
+• Visual Studio Code atau Android Studio sebagai Integrated Development Environment (IDE) utama, dilengkapi ekstensi resmi Flutter dan Dart.
+• Web Browser (Google Chrome / Microsoft Edge) untuk kebutuhan debugging dan pembuatan akun layanan cloud.
+
+
+================================================================================
+BAB II: INSTALASI PERANGKAT LUNAK PENDUKUNG (PRASYARAT)
+================================================================================
+
+2.1 Instalasi Git Version Control
+Git diperlukan untuk mengunduh dan menyinkronkan kode sumber aplikasi dari repositori GitHub. Langkah-langkah instalasi Git pada sistem operasi Windows adalah sebagai berikut:
+• Kunjungi situs resmi Git pada tautan https://git-scm.com/downloads dan unduh berkas instalasi (installer) sesuai dengan arsitektur sistem operasi (64-bit).
+• Jalankan berkas instalasi .exe yang telah diunduh. Ikuti panduan instalasi standar (wizard) dengan menekan tombol Next. Pastikan opsi "Git from the command line and also from 3rd-party software" terpilih.
+• Buka jendela Command Prompt (CMD) atau PowerShell, kemudian jalankan perintah verifikasi berikut:
+  git --version
+
+2.2 Instalasi Flutter SDK dan Konfigurasi Environment Variable
+Flutter SDK merupakan fondasi utama pengembangan aplikasi. Tahapan instalasi dan konfigurasinya meliputi:
+• Unduh paket arsip Flutter SDK versi stabil terbaru dari situs resmi https://docs.flutter.dev/get-started/install.
+• Ekstrak berkas arsip zip tersebut ke direktori yang tidak memerlukan hak akses khusus administrator, sebagai contoh pada direktori C:\src\flutter atau D:\flutter. Hindari meletakkan folder SDK di dalam direktori C:\Program Files\ guna mencegah permasalahan hak akses (permission privilege).
+• Daftarkan jalur (path) folder biner Flutter ke variabel lingkungan sistem (Environment Variables):
+  - Buka menu pencarian Windows, ketik "Edit the system environment variables", lalu tekan Enter.
+  - Klik tombol "Environment Variables..." pada bagian kanan bawah.
+  - Pada bagian User variables atau System variables, cari variabel bernama Path, lalu klik tombol Edit.
+  - Klik tombol New, kemudian masukkan lokasi subfolder bin dari Flutter, misalnya: C:\src\flutter\bin. Klik OK pada seluruh jendela dialog untuk menyimpan perubahan.
+
+2.3 Instalasi Android Studio, Android SDK, dan Emulator
+Android Studio bertindak sebagai penyedia perkakas pengembangan (build tools) dan emulator perangkat Android. Langkah pengaturannya adalah:
+• Unduh dan pasang Android Studio dari laman resmi https://developer.android.com/studio.
+• Buka Android Studio, buka menu Settings / Preferences > Languages & Frameworks > Android SDK. Pada tab SDK Platforms, pastikan versi Android 13 (Tiramisu) atau Android 14 (UpsideDownCake) telah terpasang.
+• Beralih ke tab SDK Tools, centang komponen berikut lalu klik Apply:
+  - Android SDK Build-Tools (Versi terbaru)
+  - Android SDK Command-line Tools (latest) (Wajib untuk Flutter CLI)
+  - Android SDK Platform-Tools dan Android Emulator.
+• Buat perangkat virtual (Android Virtual Device / AVD) melalui menu Device Manager di Android Studio dengan memilih profil perangkat (contoh: Pixel 7 Pro dengan sistem citra system image API 34).
+
+2.4 Verifikasi Kesiapan Lingkungan Melalui Flutter Doctor
+Buka terminal atau Command Prompt baru, lalu jalankan perintah diagnosis otomatis berikut:
+flutter doctor
+
+Apabila muncul peringatan terkait lisensi Android yang belum disetujui, jalankan perintah berikut dan ketik y (yes) pada setiap konfirmasi persetujuan lisensi:
+flutter doctor --android-licenses
+
+Pastikan seluruh indikator pada Flutter, Android toolchain, dan VS Code / Android Studio telah menampilkan tanda centang hijau ([✓]).
+
+
+================================================================================
+BAB III: PENGAMBILAN KODE SUMBER DAN MANAJEMEN DEPENDENSI
+================================================================================
+
+3.1 Kloning Repositori Proyek (Repository Cloning)
+Pengambilan kode sumber aplikasi dapat dilakukan dengan melakukan proses kloning (cloning) dari repositori GitHub resmi pengembang. Buka terminal pada direktori kerja yang diinginkan, kemudian jalankan baris perintah berikut:
+
+# Kloning repositori proyek dari GitHub
+git clone https://github.com/MuhammadFarhanAprilianto/GadoGado_App.git
+
+# Masuk ke dalam direktori proyek yang telah dikloning
+cd GadoGado_App
+
+3.2 Struktur Direktori Proyek
+Struktur berkas dan folder proyek GadoGado_App telah disusun secara terstruktur berdasarkan prinsip Clean Architecture & MVVM sebagai berikut:
+
+GadoGado_App/
+├── .env.example              # Template konfigurasi variabel lingkungan privat
+├── pubspec.yaml              # Berkas konfigurasi dependensi dan aset Flutter
+├── android/                  # Modul konfigurasi sistem operasi Android native
+├── ios/                      # Modul konfigurasi sistem operasi iOS native
+├── assets/                   # Aset gambar, ikon, dan logo aplikasi
+│   └── images/
+└── lib/                      # Kode sumber utama aplikasi (Dart)
+    ├── main.dart             # Berkas entri utama (Entry point) aplikasi
+    ├── core/                 # Konstanta global, tema Material 3, dan utilitas PDF
+    ├── data/                 # Data model (DTO) dan service layer (Firebase & Supabase)
+    └── presentation/         # Tampilan antarmuka pengguna (UI) dan ViewModel (State)
+        ├── auth/             # Modul login, registrasi, dan deteksi peran
+        ├── customer/         # Modul katalog, pemesanan, dan struk digital pelanggan
+        ├── admin/            # Modul antrean pesanan, validasi, dan restock kasir
+        ├── owner/            # Modul dashboard eksekutif, grafik FL Chart, dan alert stok
+        └── widgets/          # Komponen UI global yang dapat digunakan kembali
+
+3.3 Instalasi Paket Dependensi Proyek (flutter pub get)
+Sebelum aplikasi dapat dikompilasi, seluruh pustaka pihak ketiga (third-party packages) yang terdaftar di dalam berkas pubspec.yaml harus diunduh dan dipasang secara lokal. Jalankan perintah berikut pada direktori akar proyek:
+
+flutter pub get
+
+Perintah di atas akan mengunduh paket dependensi inti seperti provider (manajemen status / state management), firebase_core, cloud_firestore, supabase_flutter, fl_chart (visualisasi grafik penjualan), pdf & printing (pencetakan struk dan laporan), serta google_maps_flutter.
+
+
+================================================================================
+BAB IV: KONFIGURASI LAYANAN CLOUD DAN ENVIRONMENT
+================================================================================
+
+4.1 Pembuatan Berkas Konfigurasi Lingkungan (.env)
+Untuk mematuhi standar keamanan pengembangan perangkat lunak modern (Zero Hardcoded Secrets), kredensial sensitif seperti tautan API URL dan kunci otentikasi (API Keys) disimpan terpisah di dalam berkas .env. Ikuti langkah konfigurasi berikut:
+
+• Salin berkas template .env.example menjadi berkas baru bernama .env pada direktori utama proyek:
+
+# Pada sistem operasi Windows (Command Prompt / PowerShell)
+copy .env.example .env
+
+# Atau pada sistem berbasis Unix (Linux / macOS)
+cp .env.example .env
+
+• Buka berkas .env menggunakan penyunting teks (text editor) seperti Visual Studio Code, kemudian sesuaikan variabel lingkungan sesuai dengan konfigurasi proyek Supabase yang digunakan:
+
+# ==========================================
+# WARUNG MPO LEMEZ - ENVIRONMENT CONFIG
+# ==========================================
+
+# Konfigurasi Supabase Project
+SUPABASE_URL=https://your-project-id.supabase.co
+SUPABASE_ANON_KEY=your-supabase-anon-key-here
+
+# Konfigurasi Aplikasi
+APP_NAME="Warung Mpo Lemez"
+APP_ENV=production
+
+4.2 Konfigurasi Layanan Basis Data Supabase
+Layanan Supabase digunakan sebagai salah satu penyedia basis data relasional PostgreSQL dan penyimpanan berkas cloud storage. Langkah penyiapannya adalah:
+• Buka dasbor Supabase pada peramban web (https://app.supabase.com) dan masuk ke dalam proyek Anda.
+• Buka menu Project Settings > API.
+• Salin nilai Project URL dan tempelkan pada baris SUPABASE_URL di dalam berkas .env.
+• Salin kunci publik Project API keys (anon / public) dan tempelkan pada baris SUPABASE_ANON_KEY di dalam berkas .env.
+
+4.3 Konfigurasi Layanan Firebase (Auth & Firestore)
+Layanan Firebase menangani sistem autentikasi pengguna (Firebase Authentication) serta sinkronisasi data pesanan waktu nyata (real-time synchronization) menggunakan Cloud Firestore. Pastikan berkas konfigurasi google-services.json telah diletakkan pada direktori android/app/google-services.json sesuai panduan integrasi Firebase Console.
+
+
+================================================================================
+BAB V: MENJALANKAN DAN MENGUJI APLIKASI
+================================================================================
+
+5.1 Menyiapkan Perangkat Target (Device Target)
+Aplikasi dapat dijalankan melalui dua metode pengujian, yaitu menggunakan perangkat fisik Android atau emulator perangkat virtual (Android Virtual Device):
+• Pengujian pada Perangkat Fisik (Physical Device): Hubungkan ponsel pintar Android ke komputer menggunakan kabel USB. Aktifkan menu Developer Options dan centang opsi USB Debugging pada ponsel.
+• Pengujian pada Emulator Perangkat Virtual (AVD): Buka menu Device Manager pada Android Studio atau VS Code, lalu klik tombol jalankan (Launch AVD) pada daftar emulator yang telah dibuat sebelumnya.
+
+Verifikasi deteksi perangkat target dengan menjalankan perintah berikut pada terminal:
+flutter devices
+
+5.2 Menjalankan Aplikasi dalam Mode Pengembangan (Debug Mode)
+Untuk menjalankan aplikasi dalam mode pengembangan dengan fitur pembaruan langsung (Hot Reload dan Hot Restart), ketik perintah berikut pada terminal proyek:
+flutter run
+
+Tunggu beberapa saat hingga proses kompilasi Gradle build selesai dan aplikasi terpasang secara otomatis pada layar perangkat.
+
+Tombol Pintas Operasional Mode Debug:
+• Tekan tombol r pada terminal untuk melakukan Hot Reload (memperbarui antarmuka secara instan tanpa mengulang status aplikasi).
+• Tekan tombol R (huruf besar) untuk melakukan Hot Restart (mengulang siklus status aplikasi dari awal).
+• Tekan tombol q untuk menghentikan proses eksekusi aplikasi pada perangkat.
+
+5.3 Pembuatan Berkas Paket Instalasi Produksi (Build Release APK)
+Jika aplikasi hendak dipasang secara permanen pada perangkat pengguna akhir (tanpa terhubung ke komputer pengembang), kompilasi berkas instalasi APK (Android Application Package) dalam mode rilis (release mode) dengan perintah:
+flutter build apk --release
+
+Setelah proses kompilasi selesai dengan sukses, berkas app-release.apk yang siap dipasang dapat ditemukan pada direktori penyimpanan:
+build\app\outputs\flutter-apk\app-release.apk
+
+
+================================================================================
+BAB VI: PANDUAN PEMECAHAN MASALAH (TROUBLESHOOTING)
+================================================================================
+
+Dalam proses instalasi dan eksekusi program, beberapa kendala teknis (technical issues) yang umum terjadi beserta solusi penyelesaiannya dijabarkan pada tabel berikut:
+
++-------------------------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Gejala / Pesan Kendala                                      | Penyebab Masalah                                                | Solusi Penanganan                                                                                                         |
++-------------------------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Error: CocoaPods not installed / Gradle build failed        | Konfigurasi build tools atau cache Gradle mengalami bentrokan   | Jalankan perintah 'flutter clean', kemudian hapus folder build lokal, lalu jalankan kembali 'flutter pub get' dan 'flutter run'. |
+|                                                             | (corrupt).                                                      |                                                                                                                           |
++-------------------------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Warning: Android SDK command-line tools component is missing| Komponen SDK Command-line Tools belum terpasang dari Android    | Buka Android Studio > Settings > Android SDK > SDK Tools, centang 'Android SDK Command-line Tools (latest)', klik Apply. |
+|                                                             | Studio.                                                         |                                                                                                                           |
++-------------------------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Error: Target of URI doesn't exist (packages missing)       | Paket dependensi belum terunduh secara lengkap ke direktori     | Jalankan perintah 'flutter pub get' di terminal untuk menyinkronkan seluruh paket dependensi pubspec.yaml.                |
+|                                                             | lokal.                                                          |                                                                                                                           |
++-------------------------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Blank screen / Failed to load Supabase / Firebase config    | Berkas .env belum dibuat atau konfigurasi URL/Key Supabase      | Pastikan berkas .env telah dibuat dari .env.example dan nilai SUPABASE_URL serta SUPABASE_ANON_KEY telah terisi valid.    |
+|                                                             | belum diisi.                                                    |                                                                                                                           |
++-------------------------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+
+================================================================================
+BAB VII: PENUTUP DAN CATATAN DOKUMENTASI
+================================================================================
+
+Dokumentasi petunjuk instalasi ini disusun sebagai panduan teknis operasional bagi penguji, dosen pembimbing, maupun pengembang lain yang hendak mereplikasi dan mengevaluasi sistem aplikasi Warung Mpo Lemez (GadoGado_App). Seluruh arsitektur kode sumber telah diuji dan diverifikasi bekerja secara optimal pada lingkungan pengembangan berbasis Flutter SDK dan platform Android.
+
+                                                                Jakarta, 2026
+                                                          Pengembang Aplikasi,
+
+
+
+                                                  Muhammad Farhan Aprilianto
+                                            Program Studi Teknik Informatika

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
 import '../../../../core/utils/translator.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../widgets/responsive_layout.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
@@ -64,8 +66,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final authVM = context.watch<AuthViewModel>();
-    return Scaffold(
-      backgroundColor: Colors.grey.shade50,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         title: Text(Translator.translate('profile_personal_info', authVM.selectedLanguage), style: const TextStyle(fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -103,7 +106,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               child: ElevatedButton(
                 onPressed: _saveProfile,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFBF360C),
+                  backgroundColor: AppColors.primary,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                   elevation: 0,
                 ),
@@ -116,8 +119,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildTextField(String label, TextEditingController controller, IconData icon) {
     return Column(
@@ -137,7 +141,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           child: TextField(
             controller: controller,
             decoration: InputDecoration(
-              prefixIcon: Icon(icon, color: const Color(0xFFBF360C), size: 20),
+              prefixIcon: Icon(icon, color: AppColors.primary, size: 20),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
               filled: true,
               fillColor: Colors.transparent,

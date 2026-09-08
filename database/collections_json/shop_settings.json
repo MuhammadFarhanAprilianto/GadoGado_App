@@ -1,0 +1,13 @@
+{
+  "status": "open",
+  "lastUpdated": "2026-08-26T08:00:00.000Z",
+  "isManualOverride": false,
+  "nama_toko": "Warung Mpo Lemezz",
+  "alamat": "Srengseng Sawah, Jagakarsa, Jakarta Selatan",
+  "jam_operasional": {
+    "buka": "08:00",
+    "tutup": "18:00",
+    "istirahat_mulai": "12:00",
+    "istirahat_selesai": "13:00"
+  }
+}

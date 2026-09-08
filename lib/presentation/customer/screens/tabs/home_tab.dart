@@ -5,6 +5,8 @@ import '../../../../core/constants/app_constants.dart';
 import '../../../../core/utils/translator.dart';
 import '../../../../data/models/shop_settings_model.dart';
 import '../../viewmodels/customer_viewmodel.dart';
+import '../../../widgets/warung_logo.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../widgets/food_item_card.dart';
 import '../cart_screen.dart';
 
@@ -22,18 +24,15 @@ class HomeTab extends StatelessWidget {
       backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
         actions: [
           IconButton(
             icon: CircleAvatar(
-              radius: 12,
+              radius: 18,
+              backgroundColor: Colors.grey.shade200,
               backgroundImage: user?.profileImageProvider,
             ),
             onPressed: onProfileClick,
@@ -43,9 +42,9 @@ class HomeTab extends StatelessWidget {
       ),
       body: RefreshIndicator(
         onRefresh: () => customerVM.refreshMenu(),
-        color: const Color(0xFFBF360C),
+        color: AppColors.primary,
         child: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
+          physics: const AlwaysScrollableScrollPhysics(parent: ClampingScrollPhysics()),
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -86,7 +85,7 @@ class HomeTab extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   image: const DecorationImage(
-                    image: AssetImage('assets/images/HomeGado.jpg'),
+                    image: AssetImage('assets/images/home_gado.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -153,9 +152,18 @@ class HomeTab extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           color: isSelected
-                              ? const Color(0xFFBF360C)
+                              ? AppColors.primary
                               : Colors.grey.shade100,
                           borderRadius: BorderRadius.circular(12),
+                          boxShadow: isSelected
+                              ? [
+                                  BoxShadow(
+                                    color: AppColors.primary.withValues(alpha: 0.3),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ]
+                              : null,
                         ),
                         child: Text(
                           Translator.categoryTranslate(category, authVM.selectedLanguage),
@@ -202,40 +210,31 @@ class HomeTab extends StatelessWidget {
                           borderRadius: BorderRadius.circular(24),
                         ),
                         child: Center(
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withValues(alpha: 0.8),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(Icons.lock_outline, color: Colors.white, size: 40),
-                                SizedBox(height: 12),
-                                Text(
-                                  Translator.translate('home_closed_title', authVM.selectedLanguage),
-                                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-                                ),
-                                Text(
-                                  Translator.translate('home_order_disabled', authVM.selectedLanguage),
-                                  style: TextStyle(color: Colors.white70, fontSize: 12),
-                                ),
-                              ],
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                Translator.translate('home_closed_title', authVM.selectedLanguage),
+                                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                              ),
+                              Text(
+                                Translator.translate('home_order_disabled', authVM.selectedLanguage),
+                                style: TextStyle(color: Colors.white70, fontSize: 12),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                     ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 100), // Reserve space for cart FAB
+            const SizedBox(height: 140), // Reserve space for floating navbar & cart FAB
           ],
         ),
       )),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 20, right: 10),
+        padding: const EdgeInsets.only(bottom: 78, right: 8),
         child: FloatingActionButton(
           onPressed: () {
             Navigator.push(
@@ -243,7 +242,7 @@ class HomeTab extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const CartScreen()),
             );
           },
-          backgroundColor: const Color(0xFFBF360C),
+          backgroundColor: AppColors.primary,
           elevation: 8,
           child: Stack(
             children: [
@@ -260,8 +259,8 @@ class HomeTab extends StatelessWidget {
                     ),
                     child: Text(
                       '${customerVM.cartCount}',
-                      style: const TextStyle(
-                        color: Color(0xFFBF360C),
+                      style: TextStyle(
+                        color: AppColors.primary,
                         fontSize: 8,
                         fontWeight: FontWeight.bold,
                       ),

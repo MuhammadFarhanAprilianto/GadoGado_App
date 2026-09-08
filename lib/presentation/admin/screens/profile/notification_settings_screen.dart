@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/translator.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
+import '../../../widgets/responsive_layout.dart';
 
 class NotificationSettingsScreen extends StatelessWidget {
   const NotificationSettingsScreen({super.key});
@@ -11,8 +12,9 @@ class NotificationSettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final authVM = context.watch<AuthViewModel>();
 
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(Translator.translate('notif_settings_title', authVM.selectedLanguage), style: const TextStyle(fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -64,12 +66,12 @@ class NotificationSettingsScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: const Color(0xFFFBE9E7),
+                color: const Color(0xFFFFF3E0),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.info_outline, color: Color(0xFFBF360C)),
+                  const Icon(Icons.info_outline, color: AppColors.primary),
                   const SizedBox(width: 16),
                   Expanded(
                     child: Text(
@@ -83,8 +85,9 @@ class NotificationSettingsScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildSettingCard({
     required String title,

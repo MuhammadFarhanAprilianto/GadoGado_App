@@ -52,17 +52,20 @@ class _FoodDetailSheetState extends State<FoodDetailSheet> {
     }
     final String notesText = notesParts.join(' | ');
 
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
-      ),
-      padding: EdgeInsets.only(
-        left: 20,
-        right: 20,
-        top: 12,
-        bottom: MediaQuery.of(context).padding.bottom + 20,
-      ),
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 600),
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+          ),
+          padding: EdgeInsets.only(
+            left: 20,
+            right: 20,
+            top: 12,
+            bottom: MediaQuery.of(context).padding.bottom + 20,
+          ),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -118,7 +121,7 @@ class _FoodDetailSheetState extends State<FoodDetailSheet> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFBF360C),
+                      color: AppColors.primary,
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
@@ -290,7 +293,7 @@ class _FoodDetailSheetState extends State<FoodDetailSheet> {
                 Text(
                   currencyFormatter.format(totalPrice),
                   style: TextStyle(
-                    color: canAddToCart ? const Color(0xFFBF360C) : Colors.grey,
+                    color: canAddToCart ? AppColors.primary : Colors.grey,
                     fontWeight: FontWeight.w900,
                     fontSize: 24,
                     decoration: canAddToCart ? null : TextDecoration.lineThrough,
@@ -526,7 +529,7 @@ class _FoodDetailSheetState extends State<FoodDetailSheet> {
                     },
                     icon: Icon(
                       _isSaved ? Icons.favorite : Icons.favorite_border,
-                      color: _isSaved ? Colors.red : Colors.grey.shade700,
+                      color: _isSaved ? AppColors.primary : Colors.grey.shade700,
                       size: 16,
                     ),
                     label: Text(
@@ -534,13 +537,13 @@ class _FoodDetailSheetState extends State<FoodDetailSheet> {
                         ? (authVM.selectedLanguage == 'id' ? 'Disimpan' : 'Saved')
                         : (authVM.selectedLanguage == 'id' ? 'Simpan' : 'Save'),
                       style: TextStyle(
-                        color: _isSaved ? Colors.red : Colors.grey.shade700,
+                        color: _isSaved ? AppColors.primary : Colors.grey.shade700,
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     style: OutlinedButton.styleFrom(
-                      side: BorderSide(color: _isSaved ? Colors.red.shade200 : Colors.grey.shade300),
+                      side: BorderSide(color: _isSaved ? AppColors.primary.withValues(alpha: 0.5) : Colors.grey.shade300),
                       padding: const EdgeInsets.symmetric(vertical: 12),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -663,7 +666,9 @@ class _FoodDetailSheetState extends State<FoodDetailSheet> {
           ],
         ),
       ),
-    );
+    ),
+  ),
+);
   }
 
   void _showReportDialog(BuildContext context, String lang) {

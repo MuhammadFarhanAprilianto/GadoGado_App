@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
 import '../../../../core/utils/translator.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../widgets/responsive_layout.dart';
 
 class PrivacySecurityScreen extends StatefulWidget {
   const PrivacySecurityScreen({super.key});
@@ -38,7 +40,7 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen> {
                 SnackBar(content: Text(Translator.translate('pw_success', context.read<AuthViewModel>().selectedLanguage)), backgroundColor: Colors.green),
               );
             },
-            style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFBF360C)),
+            style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
             child: Text(Translator.translate('pw_update', context.read<AuthViewModel>().selectedLanguage)),
           ),
         ],
@@ -60,8 +62,9 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen> {
   @override
   Widget build(BuildContext context) {
     final authVM = context.watch<AuthViewModel>();
-    return Scaffold(
-      backgroundColor: Colors.grey.shade50,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         title: Text(Translator.translate('profile_privacy', authVM.selectedLanguage), style: const TextStyle(fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -109,15 +112,15 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen> {
                           color: const Color(0xFFF5F5F5),
                           borderRadius: BorderRadius.circular(14),
                         ),
-                        child: const Icon(Icons.phonelink_lock_rounded, color: Color(0xFFBF360C), size: 22),
+                        child: const Icon(Icons.phonelink_lock_rounded, color: AppColors.primary, size: 22),
                       ),
                       title: Text(Translator.translate('priv_2fa', authVM.selectedLanguage), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
                       subtitle: Text(Translator.translate('priv_2fa_desc', authVM.selectedLanguage), style: TextStyle(color: Colors.grey.shade500, fontSize: 11)),
                       trailing: Switch(
                         value: _twoFactorAuth,
                         onChanged: (val) => setState(() => _twoFactorAuth = val),
-                        activeThumbColor: const Color(0xFFBF360C),
-                        activeTrackColor: const Color(0xFFFBE9E7),
+                        activeThumbColor: AppColors.primary,
+                        activeTrackColor: const Color(0xFFFFF3E0),
                       ),
                     ),
                   ),
@@ -134,8 +137,9 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen> {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildSecurityLink(IconData icon, String title, String subtitle, VoidCallback onTap) {
     return Padding(
@@ -147,7 +151,7 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen> {
             color: const Color(0xFFF5F5F5),
             borderRadius: BorderRadius.circular(14),
           ),
-          child: Icon(icon, color: const Color(0xFFBF360C), size: 22),
+          child: Icon(icon, color: AppColors.primary, size: 22),
         ),
         title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
         subtitle: Text(subtitle, style: TextStyle(color: Colors.grey.shade500, fontSize: 11)),

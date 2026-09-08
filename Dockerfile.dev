@@ -1,0 +1,22 @@
+# ==============================================================================
+# Development & Testing Container for Flutter
+# ==============================================================================
+FROM ghcr.io/cirruslabs/flutter:stable
+
+WORKDIR /app
+
+# Enable web platform
+RUN flutter config --enable-web
+
+# Pre-fetch dependencies
+COPY pubspec.yaml pubspec.lock ./
+RUN flutter pub get
+
+# Copy source code
+COPY . .
+
+# Default port for Flutter Web dev-server
+EXPOSE 8080
+
+# Default command runs the test suite; can be overridden in docker-compose or CLI
+CMD ["flutter", "test"]

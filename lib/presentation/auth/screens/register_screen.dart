@@ -169,7 +169,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Navigator.of(context).pop(); // Close dialog
                 Navigator.of(context).pop(); // Go back to login screen
               },
-              child: const Text('SIGN IN NOW', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFBF360C))),
+              child: const Text('SIGN IN NOW', style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primary)),
             ),
           ],
         ),
@@ -312,12 +312,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             children: [
                               TextSpan(
                                 text: 'Terms of Service',
-                                style: TextStyle(color: Color(0xFFBF360C), decoration: TextDecoration.underline),
+                                style: TextStyle(color: AppColors.primary, decoration: TextDecoration.underline),
                               ),
                               TextSpan(text: ' and '),
                               TextSpan(
                                 text: 'Privacy Policy',
-                                style: TextStyle(color: Color(0xFFBF360C), decoration: TextDecoration.underline),
+                                style: TextStyle(color: AppColors.primary, decoration: TextDecoration.underline),
                               ),
                             ],
                           ),
@@ -335,7 +335,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            const Color(0xFFBF360C),
+                            AppColors.primaryDark,
                             AppColors.primary,
                           ],
                           begin: Alignment.centerLeft,
@@ -374,7 +374,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           children: [
                             TextSpan(
                               text: 'Sign In',
-                              style: TextStyle(color: const Color(0xFFBF360C), fontWeight: FontWeight.bold),
+                              style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),

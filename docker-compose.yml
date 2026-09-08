@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------------------------------------------
+  # Production Web Service (Nginx Alpine Serving Flutter Web)
+  # Run: docker compose up -d
+  # Access: http://localhost:8080
+  # ----------------------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gado_gado_app_web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:80/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    environment:
+      - NODE_ENV=production
+
+  # ----------------------------------------------------------------------------
+  # Automated Test Runner Service
+  # Run: docker compose --profile test run --rm test
+  # ----------------------------------------------------------------------------
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: gado_gado_app_tester
+    profiles:
+      - test
+    command: flutter test test/models/ test/widget_test.dart
+
+  # ----------------------------------------------------------------------------
+  # Live Development Server (Hot Reload via Web Server)
+  # Run: docker compose --profile dev up
+  # Access: http://localhost:8080
+  # ----------------------------------------------------------------------------
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: gado_gado_app_dev
+    profiles:
+      - dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - /app/.dart_tool
+      - /app/build
+    command: flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0
+
+  # ----------------------------------------------------------------------------
+  # Android APK Builder Service (Mobile APK generation inside Docker)
+  # Run: docker compose --profile apk run --rm build-apk
+  # Output: build/app/outputs/flutter-apk/app-release.apk
+  # ----------------------------------------------------------------------------
+  build-apk:
+    build:
+      context: .
+      dockerfile: Dockerfile.android
+    container_name: gado_gado_app_apk_builder
+    profiles:
+      - apk
+      - android
+    volumes:
+      - ./build:/app/build
+    command: flutter build apk --release
+

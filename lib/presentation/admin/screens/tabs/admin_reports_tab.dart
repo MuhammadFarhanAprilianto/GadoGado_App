@@ -9,6 +9,7 @@ import '../../../../data/models/order_model.dart';
 import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dart';
 import '../../../auth/viewmodels/auth_viewmodel.dart';
 import '../admin_order_details_screen.dart';
+import '../../../widgets/warung_logo.dart';
 
 class AdminReportsTab extends StatefulWidget {
   const AdminReportsTab({super.key});
@@ -108,13 +109,9 @@ class _AdminReportsTabState extends State<AdminReportsTab> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: false,
-          title: Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: Image.asset(
-              'assets/images/WARUNG.png',
-              height: 40,
-              fit: BoxFit.contain,
-            ),
+          title: const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: WarungLogo(height: 40),
           ),
           actions: [
             Padding(

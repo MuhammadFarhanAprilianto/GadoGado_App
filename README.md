@@ -9,7 +9,9 @@
   <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
   <img src="https://img.shields.io/badge/Provider-State%20Management-blue?style=for-the-badge" alt="Provider" />
   <img src="https://img.shields.io/badge/Material%203-Design%20System-795548?style=for-the-badge" alt="Material 3" />
-  <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS-green?style=for-the-badge" alt="Platform" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
+  <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web-green?style=for-the-badge" alt="Platform" />
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License" />
 </p>
 
@@ -106,28 +108,33 @@
 Proyek ini menerapkan prinsip **Clean Architecture & MVVM (Model - View - ViewModel)** dengan pemisahan tanggung jawab (*Separation of Concerns*) yang ketat:
 
 ```text
-lib/
-├── core/                         # Konfigurasi dasar, tema, & utilitas
-│   ├── constants/                # Konstanta aplikasi & role
-│   ├── theme/                    # Sistem warna & Material 3 AppTheme
-│   └── utils/                    # PDF Report Generator, Formatter, Translator
-├── data/                         # Data layer
-│   ├── models/                   # Data transfer objects (User, FoodItem, Order, Stock)
-│   └── services/                 # Firebase, Supabase, & Inventory Service API
-└── presentation/                 # Presentation layer (UI & State)
-    ├── auth/                     # Autentikasi (Login, Register, Role Detection)
-    │   ├── screens/
-    │   └── viewmodels/           # AuthViewModel
-    ├── customer/                 # Antarmuka & Logika Pelanggan
-    │   ├── screens/              # Home, Order Summary, Receipt, Status
-    │   └── viewmodels/           # CustomerViewModel
-    ├── admin/                    # Antarmuka & Logika Kasir / Admin
-    │   ├── screens/              # Antrean, Validasi, Restock, CRUD Menu
-    │   └── viewmodels/           # AdminViewModel
-    ├── owner/                    # Antarmuka & Logika Pemilik Bisnis
-    │   ├── screens/              # Executive Dashboard, Laporan Finansial, Stock Alert
-    │   └── viewmodels/           # OwnerViewModel
-    └── widgets/                  # Komponen UI global yang dapat digunakan kembali
+GadoGado_App/
+├── database/                     # Aset Skema, Dataset, & Security Rules Database
+│   ├── collections_json/         # Master data awal & JSON collections Firestore
+│   ├── sql_schema/               # DDL Relational Schema (PostgreSQL / Supabase / MySQL)
+│   ├── security_rules/           # Firestore Security Rules & Supabase Storage RLS
+│   └── Kamus_Data_dan_Struktur_Database.md # Kamus data atribut & tipe data
+├── docs/                         # Dokumentasi Proyek & Naskah Skripsi
+│   ├── diagrams/                 # Diagram UML, Use Case, Activity, Sequence, ERD, Arsitektur
+│   ├── poster/                   # Poster Skripsi & Asset Gambar
+│   ├── screenshots/              # Screenshot antarmuka aplikasi
+│   └── skripsi/                  # Draft naskah Bab I - VII & materi seminar
+├── assets/                       # Aset multimedia aplikasi Flutter
+│   └── images/                   # Gambar menu makanan, logo, & QRIS
+└── lib/                          # Source Code Utama (Clean Architecture & MVVM)
+    ├── core/                     # Konfigurasi dasar, tema Material 3, & utilitas
+    │   ├── constants/            # Konstanta aplikasi & role
+    │   ├── theme/                # Sistem warna & AppTheme
+    │   └── utils/                # PDF Generator, Formatter, Translator
+    ├── data/                     # Data layer
+    │   ├── models/               # Data Transfer Objects (User, FoodItem, Order, Stock)
+    │   └── services/             # Firebase, Supabase, & Inventory Service API
+    └── presentation/             # Presentation layer (UI Screens & ViewModels)
+        ├── auth/                 # Autentikasi (Login, Register, Role Detection)
+        ├── customer/             # Antarmuka & Logika Pelanggan (Home, Cart, Status)
+        ├── admin/                # Antarmuka Kasir & Admin (Antrean, Validasi, Menu)
+        ├── owner/                # Antarmuka Pemilik (Dashboard Omset, Stock Alert)
+        └── widgets/              # Reusable UI Widgets (Card, Button, Dialog)
 ```
 
 ---
@@ -173,6 +180,21 @@ flutter pub get
 ```
 
 ### 5. Jalankan Aplikasi
+
+#### Opsi A: Menggunakan Docker (Rekomendasi untuk Lab Kampus / Tanpa Setup SDK)
+```bash
+# Jalankan container web app
+docker compose up -d
+
+# Akses di web browser:
+# http://localhost:8080
+
+# Menjalankan automated test suite di dalam Docker:
+docker compose --profile test run --rm test
+```
+> 📖 Baca panduan lengkap deployment lab di [DOCKER_GUIDE.md](DOCKER_GUIDE.md).
+
+#### Opsi B: Menggunakan Flutter CLI Lokal
 ```bash
 # Mode Debug pada perangkat/emulator yang terhubung
 flutter run

@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner() {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'owner';
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    function isStaff() {
+      return isOwner() || isAdmin();
+    }
+
+    // 1. Users Collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isAuthenticated() && (request.auth.uid == userId || isOwner());
+      allow delete: if isOwner();
+    }
+
+    // 2. Raw Ingredients (Bahan Baku)
+    match /raw_ingredients/{ingredientId} {
+      allow read: if isAuthenticated();
+      allow write: if isStaff();
+    }
+
+    // 3. Menus (Katalog Menu Makanan)
+    match /food_items/{menuId} {
+      allow read: if true; // Publik dapat melihat menu
+      allow write: if isStaff();
+    }
+
+    // 4. Toppings
+    match /toppings/{toppingId} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    // 5. Orders (Transaksi Pesanan)
+    match /orders/{orderId} {
+      allow read: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isStaff());
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isStaff());
+      allow delete: if isOwner();
+    }
+
+    // 6. Shop Settings
+    match /shop_settings/{settingId} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+  }
+}

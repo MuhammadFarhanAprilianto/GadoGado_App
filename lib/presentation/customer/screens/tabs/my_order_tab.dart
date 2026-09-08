@@ -5,6 +5,8 @@ import '../../viewmodels/customer_viewmodel.dart';
 import '../../../../data/models/order_model.dart';
 import '../../../../core/utils/translator.dart';
 import '../order_details_screen.dart';
+import '../../../widgets/warung_logo.dart';
+import '../../../../core/theme/app_colors.dart';
 
 class MyOrderTab extends StatelessWidget {
   final VoidCallback? onProfileClick;
@@ -34,18 +36,15 @@ class MyOrderTab extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
         actions: [
           IconButton(
             icon: CircleAvatar(
-              radius: 12,
+              radius: 18,
+              backgroundColor: Colors.grey.shade200,
               backgroundImage: user?.profileImageProvider,
             ),
             onPressed: onProfileClick,
@@ -189,7 +188,7 @@ class MyOrderTab extends StatelessWidget {
               ),
               Text(
                 'Rp ${order.totalAmount.toInt()}',
-                style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 24, color: Color(0xFFBF360C)),
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 24, color: AppColors.primary),
               ),
             ],
           ),
@@ -257,7 +256,7 @@ class MyOrderTab extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFBF360C),
+                backgroundColor: AppColors.primary,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
@@ -286,7 +285,7 @@ class MyOrderTab extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(color: const Color(0xFFFFF3E0), borderRadius: BorderRadius.circular(16)),
-                child: const Icon(Icons.history_rounded, color: Color(0xFFBF360C)),
+                child: Icon(Icons.history_rounded, color: AppColors.primary),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -333,7 +332,7 @@ class MyOrderTab extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFBF360C),
+                  backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   elevation: 0,

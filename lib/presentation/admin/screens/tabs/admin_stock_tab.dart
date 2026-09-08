@@ -8,6 +8,7 @@ import 'package:gado_gado_app/presentation/auth/viewmodels/auth_viewmodel.dart';
 import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dart';
 import '../add_ingredient_screen.dart';
 import '../restock_ingredient_screen.dart';
+import '../../../widgets/warung_logo.dart';
 
 class AdminStockTab extends StatelessWidget {
   const AdminStockTab({super.key});
@@ -21,13 +22,9 @@ class AdminStockTab extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
         actions: [
           Padding(

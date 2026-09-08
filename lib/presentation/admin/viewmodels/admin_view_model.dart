@@ -196,8 +196,10 @@ class AdminViewModel extends ChangeNotifier {
     _firestore.collection('bahan').snapshots().listen((snapshot) {
       _ingredients = snapshot.docs.map((doc) {
         final data = doc.data();
-        final stok = (data['stok'] ?? 0).toDouble();
-        final threshold = (data['ambang_batas_stok'] ?? data['minStockThreshold'] ?? 5).toDouble();
+        final rawStok = data['stok'] ?? data['amount'] ?? 0;
+        final rawMin = data['ambang_batas_stok'] ?? data['minStockThreshold'] ?? 5;
+        final stok = (rawStok is num) ? rawStok.toDouble() : (double.tryParse(rawStok.toString()) ?? 0.0);
+        final threshold = (rawMin is num) ? rawMin.toDouble() : (double.tryParse(rawMin.toString()) ?? 5.0);
         return RawIngredientModel(
           id: doc.id,
           name: data['nama_bahan'] ?? data['name'] ?? '',
@@ -223,8 +225,10 @@ class AdminViewModel extends ChangeNotifier {
       final snapshot = await _firestore.collection('bahan').get();
       _ingredients = snapshot.docs.map((doc) {
         final data = doc.data();
-        final stok = (data['stok'] ?? 0).toDouble();
-        final threshold = (data['ambang_batas_stok'] ?? data['minStockThreshold'] ?? 5).toDouble();
+        final rawStok = data['stok'] ?? data['amount'] ?? 0;
+        final rawMin = data['ambang_batas_stok'] ?? data['minStockThreshold'] ?? 5;
+        final stok = (rawStok is num) ? rawStok.toDouble() : (double.tryParse(rawStok.toString()) ?? 0.0);
+        final threshold = (rawMin is num) ? rawMin.toDouble() : (double.tryParse(rawMin.toString()) ?? 5.0);
         return RawIngredientModel(
           id: doc.id,
           name: data['nama_bahan'] ?? data['name'] ?? '',
@@ -578,18 +582,108 @@ class AdminViewModel extends ChangeNotifier {
     }
   }
 
+  Future<void> updateIngredientDetails(String id, double amount, double? minThreshold) async {
+    // 1. Optimistic Local Update (Instant 0ms UI reactivity)
+    final index = _ingredients.indexWhere((i) => i.id == id);
+    if (index != -1) {
+      final old = _ingredients[index];
+      final threshold = minThreshold ?? old.minStockThreshold ?? 5.0;
+      _ingredients[index] = RawIngredientModel(
+        id: old.id,
+        name: old.name,
+        category: old.category,
+        amount: amount,
+        unit: old.unit,
+        minStockThreshold: threshold,
+        isLowStock: amount < threshold,
+      );
+      notifyListeners();
+    }
+
+    // 2. Real-time Firestore Database Write
+    try {
+      await _firestore.collection('bahan').doc(id).set({
+        'stok': amount,
+        'amount': amount,
+        'ambang_batas_stok': minThreshold ?? 5.0,
+        'minStockThreshold': minThreshold ?? 5.0,
+        'lastUpdated': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+    } catch (e) {
+      debugPrint('Error updating ingredient details in Firestore: $e');
+    }
+  }
+
   Future<void> updateIngredientAmount(String id, double amount) async {
-    await _firestore.collection('bahan').doc(id).update({'stok': amount});
+    // 1. Optimistic Local Update
+    final index = _ingredients.indexWhere((i) => i.id == id);
+    if (index != -1) {
+      final old = _ingredients[index];
+      final threshold = old.minStockThreshold ?? 5.0;
+      _ingredients[index] = RawIngredientModel(
+        id: old.id,
+        name: old.name,
+        category: old.category,
+        amount: amount,
+        unit: old.unit,
+        minStockThreshold: threshold,
+        isLowStock: amount < threshold,
+      );
+      notifyListeners();
+    }
+
+    // 2. Real-time Firestore Database Write
+    try {
+      await _firestore.collection('bahan').doc(id).set({
+        'stok': amount,
+        'amount': amount,
+        'lastUpdated': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+    } catch (e) {
+      debugPrint('Error updating ingredient amount in Firestore: $e');
+    }
   }
 
   Future<void> updateIngredientThreshold(String id, double? minThreshold) async {
-    await _firestore.collection('bahan').doc(id).update({
-      'ambang_batas_stok': minThreshold ?? 5.0,
-    });
+    final threshold = minThreshold ?? 5.0;
+    // 1. Optimistic Local Update
+    final index = _ingredients.indexWhere((i) => i.id == id);
+    if (index != -1) {
+      final old = _ingredients[index];
+      _ingredients[index] = RawIngredientModel(
+        id: old.id,
+        name: old.name,
+        category: old.category,
+        amount: old.amount,
+        unit: old.unit,
+        minStockThreshold: threshold,
+        isLowStock: old.amount < threshold,
+      );
+      notifyListeners();
+    }
+
+    // 2. Real-time Firestore Database Write
+    try {
+      await _firestore.collection('bahan').doc(id).set({
+        'ambang_batas_stok': threshold,
+        'minStockThreshold': threshold,
+        'lastUpdated': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+    } catch (e) {
+      debugPrint('Error updating ingredient threshold in Firestore: $e');
+    }
   }
 
   Future<void> deleteIngredient(String id) async {
-    await _firestore.collection('bahan').doc(id).delete();
+    // Optimistic remove
+    _ingredients.removeWhere((i) => i.id == id);
+    notifyListeners();
+
+    try {
+      await _firestore.collection('bahan').doc(id).delete();
+    } catch (e) {
+      debugPrint('Error deleting ingredient in Firestore: $e');
+    }
   }
 
   void _listenToExpenses() {

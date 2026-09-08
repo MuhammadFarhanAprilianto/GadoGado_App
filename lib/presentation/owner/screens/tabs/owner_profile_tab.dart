@@ -12,6 +12,7 @@ import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dar
 import 'package:gado_gado_app/presentation/customer/viewmodels/customer_viewmodel.dart';
 import '../../providers/owner_navigation_provider.dart';
 import 'package:intl/intl.dart';
+import '../../../widgets/warung_logo.dart';
 
 class OwnerProfileTab extends StatefulWidget {
   const OwnerProfileTab({super.key});
@@ -122,13 +123,9 @@ class _OwnerProfileTabState extends State<OwnerProfileTab> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
         actions: [
           Padding(

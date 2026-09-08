@@ -6,6 +6,7 @@ import '../../../../core/utils/translator.dart';
 import '../../../../data/models/order_model.dart';
 import 'package:gado_gado_app/presentation/admin/viewmodels/admin_view_model.dart';
 import 'package:gado_gado_app/presentation/auth/viewmodels/auth_viewmodel.dart';
+import '../../widgets/responsive_layout.dart';
 
 class AdminOrderDetailsScreen extends StatelessWidget {
   final OrderModel order;
@@ -21,8 +22,9 @@ class AdminOrderDetailsScreen extends StatelessWidget {
     // Find up-to-date order status from VM instead of stale passed instance
     final upToDateOrder = adminVM.allOrders.firstWhere((o) => o.id == order.id, orElse: () => order);
 
-    return Scaffold(
-      backgroundColor: Colors.grey.shade50,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         title: Text('${Translator.translate('order_detail_title', lang)} ${order.id}', style: const TextStyle(fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -314,12 +316,13 @@ class AdminOrderDetailsScreen extends StatelessWidget {
                    ],
                  ],
                ),
-             ),
-          ],
-        ),
-      ),
-    );
-  }
+              ),
+           ],
+         ),
+       ),
+     ),
+   );
+ }
   
   Widget _buildReceiptRow(String label, double amount) {
     return Padding(

@@ -705,7 +705,7 @@ class CustomerViewModel extends ChangeNotifier {
         name: 'Gado-Gado Spesial',
         description: 'Campuran sayuran kukus, tahu, tempe, dan saus kacang resep rahasia 24 jam kami.',
         price: 35000,
-        image: 'assets/images/Gado-Gado.jpg',
+        image: 'assets/images/gado_gado.jpg',
         category: 'Makanan Utama',
         isBestSeller: true,
         recipe: [
@@ -721,7 +721,7 @@ class CustomerViewModel extends ChangeNotifier {
         name: 'Ketoprak',
         description: 'Ketupat, bihun, tauge, dan tahu yang disiram saus kacang kental dan bumbu bawang putih yang gurih.',
         price: 28000,
-        image: 'assets/images/Ketoprak.jpg',
+        image: 'assets/images/ketoprak.jpg',
         category: 'Makanan Utama',
         isNew: true,
         recipe: [
@@ -736,7 +736,7 @@ class CustomerViewModel extends ChangeNotifier {
         name: 'Karedok',
         description: 'Sayuran segar mentah yang dicampur dengan bumbu kacang kencur yang harum dan menggugah selera.',
         price: 30000,
-        image: 'assets/images/Karedok.jpg',
+        image: 'assets/images/karedok.jpg',
         category: 'Makanan Utama',
         isNew: true,
         recipe: [
@@ -750,7 +750,7 @@ class CustomerViewModel extends ChangeNotifier {
         name: 'Es Campur Mpo',
         description: 'Campuran segar buah tropis, cincau, dan susu kental manis di atas es serut.',
         price: 18000,
-        image: 'assets/images/Es Buah.jpg',
+        image: 'assets/images/es_buah.jpg',
         category: 'Drinks',
         recipe: [
           RecipeItemModel(ingredientId: getIngId('Cincau'), ingredientName: 'Cincau', quantityPerPortion: 50),
@@ -763,7 +763,7 @@ class CustomerViewModel extends ChangeNotifier {
         name: 'Es Teh Manis',
         description: 'Teh melati autentik yang diseduh segar dan disajikan dingin. Pembersih palet yang sempurna.',
         price: 7000,
-        image: 'assets/images/Es_Teh.jpg',
+        image: 'assets/images/es_teh.jpg',
         category: 'Drinks',
         recipe: [
           RecipeItemModel(ingredientId: getIngId('Teh celup'), ingredientName: 'Teh celup', quantityPerPortion: 1),

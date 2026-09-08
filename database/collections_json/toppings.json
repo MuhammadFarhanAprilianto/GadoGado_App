@@ -1,0 +1,32 @@
+[
+  {
+    "id": "TOP_001",
+    "nama": "Ekstra Telur Rebus",
+    "harga": 4000.0,
+    "id_bahan": "ING_010"
+  },
+  {
+    "id": "TOP_002",
+    "nama": "Ekstra Lontong",
+    "harga": 3000.0,
+    "id_bahan": "ING_011"
+  },
+  {
+    "id": "TOP_003",
+    "nama": "Ekstra Kerupuk Emping",
+    "harga": 3000.0,
+    "id_bahan": "ING_012"
+  },
+  {
+    "id": "TOP_004",
+    "nama": "Ekstra Tahu Goreng",
+    "harga": 2000.0,
+    "id_bahan": "ING_008"
+  },
+  {
+    "id": "TOP_005",
+    "nama": "Ekstra Tempe Goreng",
+    "harga": 2000.0,
+    "id_bahan": "ING_009"
+  }
+]

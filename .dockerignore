@@ -1,0 +1,37 @@
+# Git and version control
+.git
+.gitignore
+.github
+
+# Flutter / Dart build artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+
+# Android / iOS build cache
+android/.gradle/
+android/local.properties
+android/app/build/
+ios/Flutter/
+ios/.symlinks/
+ios/Pods/
+
+# Python cache & docs
+__pycache__/
+*.pyc
+scratch/
+docs/
+poster_assets/
+/*.docx
+/*.png
+!assets/**
+
+# Environment files
+.env

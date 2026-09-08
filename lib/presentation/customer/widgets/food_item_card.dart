@@ -158,7 +158,7 @@ class FoodItemCard extends StatelessWidget {
                         Text(
                           'Rp ${item.price.toInt()}',
                           style: TextStyle(
-                            color: canAddToCart && portionsRemaining > 0 ? const Color(0xFFBF360C) : Colors.grey,
+                            color: canAddToCart && portionsRemaining > 0 ? AppColors.primary : Colors.grey,
                             fontWeight: FontWeight.w900,
                             fontSize: 20,
                             decoration: canAddToCart && portionsRemaining > 0 ? null : TextDecoration.lineThrough,

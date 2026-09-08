@@ -7,6 +7,8 @@ import '../profile/edit_profile_screen.dart';
 import '../profile/notification_settings_screen.dart';
 import '../profile/privacy_security_screen.dart';
 import '../../../../core/utils/translator.dart';
+import '../../../widgets/warung_logo.dart';
+import '../../../../core/theme/app_colors.dart';
 
 class ProfileTab extends StatelessWidget {
   const ProfileTab({super.key});
@@ -22,18 +24,15 @@ class ProfileTab extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
         actions: [
           IconButton(
             icon: CircleAvatar(
-              radius: 12,
+              radius: 18,
+              backgroundColor: Colors.grey.shade200,
               backgroundImage: user?.profileImageProvider,
             ),
             onPressed: () {},
@@ -74,7 +73,7 @@ class ProfileTab extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         decoration: const BoxDecoration(
-                          color: Color(0xFFBF360C),
+                          color: AppColors.primary,
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(Icons.edit, color: Colors.white, size: 16),
@@ -165,7 +164,7 @@ class ProfileTab extends StatelessWidget {
           color: const Color(0xFFF5F5F5),
           borderRadius: BorderRadius.circular(14),
         ),
-        child: Icon(icon, color: const Color(0xFFBF360C), size: 22),
+        child: Icon(icon, color: AppColors.primary, size: 22),
       ),
       title: Text(
         title,
@@ -249,8 +248,8 @@ class ProfileTab extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: const Color(0xFFFBE9E7), shape: BoxShape.circle),
-            child: Icon(icon, color: const Color(0xFFBF360C)),
+            decoration: const BoxDecoration(color: Color(0xFFFFF3E0), shape: BoxShape.circle),
+            child: Icon(icon, color: AppColors.primary),
           ),
           const SizedBox(height: 8),
           Text(label, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),

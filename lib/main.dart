@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'core/theme/app_theme.dart';
+import 'core/theme/app_colors.dart';
 import 'presentation/auth/viewmodels/auth_viewmodel.dart';
 import 'presentation/auth/screens/login_screen.dart';
 import 'presentation/customer/screens/customer_main_screen.dart';
@@ -48,6 +49,7 @@ class MpoLemezzApp extends StatelessWidget {
       title: 'Warung Mpo Lemez',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
+      scrollBehavior: const NoStretchScrollBehavior(),
       home: Consumer<AuthViewModel>(
         builder: (context, auth, _) {
           // Tampilkan splash/loading saat sedang memeriksa sesi yang tersimpan
@@ -84,7 +86,7 @@ class _SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFBF360C),
+      backgroundColor: AppColors.primary,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -136,3 +138,42 @@ class _SplashScreen extends StatelessWidget {
     );
   }
 }
+
+/// Menghilangkan efek overscroll stretch (ketarik / membesar) di Android 12+
+/// dan membuat scroll meluncur halus (tidak melompat atau terlalu cepat).
+class NoStretchScrollBehavior extends MaterialScrollBehavior {
+  const NoStretchScrollBehavior();
+
+  @override
+  Widget buildOverscrollIndicator(
+    BuildContext context,
+    Widget child,
+    ScrollableDetails details,
+  ) {
+    return child;
+  }
+
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) {
+    return const SmoothClampingScrollPhysics();
+  }
+}
+
+class SmoothClampingScrollPhysics extends ClampingScrollPhysics {
+  const SmoothClampingScrollPhysics({super.parent});
+
+  @override
+  SmoothClampingScrollPhysics applyTo(ScrollPhysics? ancestor) {
+    return SmoothClampingScrollPhysics(parent: buildParent(ancestor));
+  }
+
+  @override
+  double get minFlingVelocity => 50.0;
+
+  @override
+  double get maxFlingVelocity => 6000.0;
+
+  @override
+  double get dragStartDistanceMotionThreshold => 3.5;
+}
+

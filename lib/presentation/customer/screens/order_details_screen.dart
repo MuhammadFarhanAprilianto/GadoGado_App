@@ -8,6 +8,8 @@ import '../../../../core/utils/translator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
 import 'digital_receipt_screen.dart';
+import '../../widgets/responsive_layout.dart';
+import '../../../../core/theme/app_colors.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
   final OrderModel order;
@@ -21,8 +23,9 @@ class OrderDetailsScreen extends StatelessWidget {
      // Find the live order from the VM to ensure we see updates
      final liveOrder = customerVM.orders.firstWhere((o) => o.id == order.id, orElse: () => order);
 
-     return Scaffold(
-      backgroundColor: Colors.grey.shade50,
+     return ResponsiveLayout(
+       child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         title: Text(Translator.translate('details_title', authVM.selectedLanguage), style: const TextStyle(fontWeight: FontWeight.bold)),
         leading: IconButton(
@@ -51,8 +54,9 @@ class OrderDetailsScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildMainCard(BuildContext context, AuthViewModel authVM, OrderModel currentOrder) {
     return Container(
@@ -70,7 +74,7 @@ class OrderDetailsScreen extends StatelessWidget {
               _buildStatusBadge(authVM, currentOrder),
               Text(
                 'Rp ${order.totalAmount.toInt()}',
-                style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 24, color: Color(0xFFBF360C)),
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 24, color: AppColors.primary),
               ),
             ],
           ),
@@ -305,10 +309,10 @@ class OrderDetailsScreen extends StatelessWidget {
                             color: isFuture ? Colors.grey.shade100 : dotColor,
                             shape: BoxShape.circle,
                             border: isCurrent
-                                ? Border.all(color: const Color(0xFFBF360C), width: 2.5)
+                                ? Border.all(color: AppColors.primary, width: 2.5)
                                 : null,
                             boxShadow: isCurrent
-                                ? [BoxShadow(color: const Color(0xFFE65100).withValues(alpha: 0.3), blurRadius: 8, spreadRadius: 2)]
+                                ? [BoxShadow(color: AppColors.primary.withValues(alpha: 0.3), blurRadius: 8, spreadRadius: 2)]
                                 : null,
                           ),
                           child: Icon(
@@ -347,7 +351,7 @@ class OrderDetailsScreen extends StatelessWidget {
                               color: isFuture
                                   ? Colors.grey.shade400
                                   : isCurrent
-                                      ? const Color(0xFFBF360C)
+                                      ? AppColors.primary
                                       : Colors.black87,
                             ),
                           ),
@@ -364,12 +368,12 @@ class OrderDetailsScreen extends StatelessWidget {
                               margin: const EdgeInsets.only(top: 6),
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                               decoration: BoxDecoration(
-                                color: const Color(0xFFFBE9E7),
+                                color: const Color(0xFFFFF3E0),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: const Text(
                                 'Status Saat Ini',
-                                style: TextStyle(fontSize: 10, color: Color(0xFFBF360C), fontWeight: FontWeight.bold),
+                                style: TextStyle(fontSize: 10, color: AppColors.primary, fontWeight: FontWeight.bold),
                               ),
                             ),
                         ],
@@ -725,7 +729,7 @@ class _LocationCardContentState extends State<_LocationCardContent> {
           const SizedBox(height: 16),
           Text(
             Translator.translate(labelKey, widget.authVM.selectedLanguage), 
-            style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w900, color: Color(0xFFBF360C), letterSpacing: 1.0)
+            style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w900, color: AppColors.primary, letterSpacing: 1.0)
           ),
           const SizedBox(height: 4),
           if (_isResolving)

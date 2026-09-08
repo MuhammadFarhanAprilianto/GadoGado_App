@@ -8,6 +8,7 @@ import '../../../customer/screens/profile/edit_profile_screen.dart';
 import '../profile/notification_settings_screen.dart';
 import '../profile/change_password_screen.dart';
 import '../../../../core/utils/translator.dart';
+import '../../../widgets/warung_logo.dart';
 
 class AdminProfileTab extends StatelessWidget {
   const AdminProfileTab({super.key});
@@ -21,13 +22,9 @@ class AdminProfileTab extends StatelessWidget {
       backgroundColor: Colors.white, // Changed from grey.shade50 to match reference
       appBar: AppBar(
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Image.asset(
-            'assets/images/WARUNG.png',
-            height: 40,
-            fit: BoxFit.contain,
-          ),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: WarungLogo(height: 40),
         ),
       ),
       body: SingleChildScrollView(
@@ -333,8 +330,8 @@ class AdminProfileTab extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: const BoxDecoration(color: Color(0xFFFBE9E7), shape: BoxShape.circle),
-            child: Icon(icon, color: const Color(0xFFBF360C)),
+            decoration: const BoxDecoration(color: Color(0xFFFFF3E0), shape: BoxShape.circle),
+            child: Icon(icon, color: AppColors.primary),
           ),
           const SizedBox(height: 8),
           Text(label, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),

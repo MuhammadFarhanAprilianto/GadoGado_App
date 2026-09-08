@@ -8,6 +8,8 @@ import '../../../../data/models/food_item_model.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../auth/viewmodels/auth_viewmodel.dart';
 import '../viewmodels/admin_view_model.dart';
+import '../../widgets/warung_logo.dart';
+import '../../widgets/responsive_layout.dart';
 
 class AddMenuScreen extends StatefulWidget {
   const AddMenuScreen({super.key});
@@ -43,8 +45,9 @@ class _AddMenuScreenState extends State<AddMenuScreen> {
     final authVM = context.watch<AuthViewModel>();
     final user = authVM.currentUser;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return ResponsiveLayout(
+      child: Scaffold(
+        backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -52,15 +55,9 @@ class _AddMenuScreenState extends State<AddMenuScreen> {
           icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.primary, size: 20),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Row(
-          children: [
-            Icon(Icons.restaurant_menu, color: AppColors.primary, size: 28),
-            SizedBox(width: 8),
-            Text(
-              'Warung Mpo Lemez',
-              style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w900, fontSize: 24),
-            ),
-          ],
+        title: const Padding(
+          padding: EdgeInsets.only(left: 4.0),
+          child: WarungLogo(height: 38),
         ),
         actions: [
           Padding(
@@ -336,8 +333,9 @@ class _AddMenuScreenState extends State<AddMenuScreen> {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildLabel(String text) {
     return Padding(
@@ -456,8 +454,8 @@ class _AddMenuScreenState extends State<AddMenuScreen> {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: const BoxDecoration(color: Color(0xFFFBE9E7), shape: BoxShape.circle),
-            child: Icon(icon, color: const Color(0xFFBF360C)),
+            decoration: const BoxDecoration(color: Color(0xFFFFF3E0), shape: BoxShape.circle),
+            child: Icon(icon, color: AppColors.primary),
           ),
           const SizedBox(height: 8),
           Text(label, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ING_001",
+    "nama": "Kacang Tanah",
+    "kategori": "Bahan Pokok Bumbu",
+    "jumlah": 25.0,
+    "satuan": "kg",
+    "min_stok": 5.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_002",
+    "nama": "Gula Merah",
+    "kategori": "Bahan Pokok Bumbu",
+    "jumlah": 15.0,
+    "satuan": "kg",
+    "min_stok": 3.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_003",
+    "nama": "Cabai Rawit Merah",
+    "kategori": "Bumbu & Rempah",
+    "jumlah": 8.0,
+    "satuan": "kg",
+    "min_stok": 2.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_004",
+    "nama": "Bawang Putih",
+    "kategori": "Bumbu & Rempah",
+    "jumlah": 6.0,
+    "satuan": "kg",
+    "min_stok": 1.5,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_005",
+    "nama": "Tauge Segar",
+    "kategori": "Sayuran",
+    "jumlah": 12.0,
+    "satuan": "kg",
+    "min_stok": 3.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_006",
+    "nama": "Kangkung Segar",
+    "kategori": "Sayuran",
+    "jumlah": 10.0,
+    "satuan": "ikat",
+    "min_stok": 4.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_007",
+    "nama": "Kacang Panjang",
+    "kategori": "Sayuran",
+    "jumlah": 8.0,
+    "satuan": "kg",
+    "min_stok": 2.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_008",
+    "nama": "Tahu Putih Segar",
+    "kategori": "Lauk & Pelengkap",
+    "jumlah": 50.0,
+    "satuan": "potong",
+    "min_stok": 15.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_009",
+    "nama": "Tempe Daun",
+    "kategori": "Lauk & Pelengkap",
+    "jumlah": 40.0,
+    "satuan": "potong",
+    "min_stok": 10.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_010",
+    "nama": "Telur Ayam",
+    "kategori": "Lauk & Pelengkap",
+    "jumlah": 60.0,
+    "satuan": "butir",
+    "min_stok": 20.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_011",
+    "nama": "Lontong",
+    "kategori": "Karbohidrat",
+    "jumlah": 35.0,
+    "satuan": "buah",
+    "min_stok": 10.0,
+    "is_low_stock": false
+  },
+  {
+    "id": "ING_012",
+    "nama": "Kerupuk Bawang / Emping",
+    "kategori": "Topping",
+    "jumlah": 5.0,
+    "satuan": "kg",
+    "min_stok": 1.0,
+    "is_low_stock": false
+  }
+]

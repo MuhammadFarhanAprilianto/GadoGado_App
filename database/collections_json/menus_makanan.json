@@ -1,0 +1,181 @@
+[
+  {
+    "id": "MENU_001",
+    "nama": "Gado-Gado Spesial Komplit + Lontong",
+    "kategori": "Makanan Utama",
+    "harga": 22000.0,
+    "status": "Tersedia",
+    "gambar_url": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
+    "deskripsi": "Gado-gado legendaris khas Betawi dengan sayuran segar, tahu, tempe, telur ayam rebus, lontong empuk, bumbu kacang gurih gurih manis, dan taburan kerupuk emping gurih.",
+    "resep_bahan": [
+      {
+        "id_bahan": "ING_001",
+        "nama_bahan": "Kacang Tanah",
+        "jumlah_per_porsi": 0.08,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_002",
+        "nama_bahan": "Gula Merah",
+        "jumlah_per_porsi": 0.03,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_005",
+        "nama_bahan": "Tauge Segar",
+        "jumlah_per_porsi": 0.05,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_006",
+        "nama_bahan": "Kangkung Segar",
+        "jumlah_per_porsi": 0.25,
+        "satuan": "ikat"
+      },
+      {
+        "id_bahan": "ING_007",
+        "nama_bahan": "Kacang Panjang",
+        "jumlah_per_porsi": 0.04,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_008",
+        "nama_bahan": "Tahu Putih",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "potong"
+      },
+      {
+        "id_bahan": "ING_009",
+        "nama_bahan": "Tempe",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "potong"
+      },
+      {
+        "id_bahan": "ING_010",
+        "nama_bahan": "Telur Ayam",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "butir"
+      },
+      {
+        "id_bahan": "ING_011",
+        "nama_bahan": "Lontong",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "buah"
+      }
+    ]
+  },
+  {
+    "id": "MENU_002",
+    "nama": "Gado-Gado Original Tanpa Lontong",
+    "kategori": "Makanan Utama",
+    "harga": 18000.0,
+    "status": "Tersedia",
+    "gambar_url": "https://images.unsplash.com/photo-1540420773420-3366772f4999",
+    "deskripsi": "Gado-gado sehat murni kaya sayuran rebus segar, tahu, tempe, bumbu kacang medok berlimpah, dan kerupuk.",
+    "resep_bahan": [
+      {
+        "id_bahan": "ING_001",
+        "nama_bahan": "Kacang Tanah",
+        "jumlah_per_porsi": 0.08,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_002",
+        "nama_bahan": "Gula Merah",
+        "jumlah_per_porsi": 0.03,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_005",
+        "nama_bahan": "Tauge Segar",
+        "jumlah_per_porsi": 0.07,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_006",
+        "nama_bahan": "Kangkung Segar",
+        "jumlah_per_porsi": 0.35,
+        "satuan": "ikat"
+      },
+      {
+        "id_bahan": "ING_007",
+        "nama_bahan": "Kacang Panjang",
+        "jumlah_per_porsi": 0.05,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_008",
+        "nama_bahan": "Tahu Putih",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "potong"
+      },
+      {
+        "id_bahan": "ING_009",
+        "nama_bahan": "Tempe",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "potong"
+      }
+    ]
+  },
+  {
+    "id": "MENU_003",
+    "nama": "Ketoprak Betawi Mantap",
+    "kategori": "Makanan Utama",
+    "harga": 17000.0,
+    "status": "Tersedia",
+    "gambar_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+    "deskripsi": "Ketoprak gurih dengan bumbu kacang uleg beraroma bawang putih khas, bihun, tauge rebus, tahu goreng renyah, dan lontong.",
+    "resep_bahan": [
+      {
+        "id_bahan": "ING_001",
+        "nama_bahan": "Kacang Tanah",
+        "jumlah_per_porsi": 0.07,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_004",
+        "nama_bahan": "Bawang Putih",
+        "jumlah_per_porsi": 0.015,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_005",
+        "nama_bahan": "Tauge Segar",
+        "jumlah_per_porsi": 0.05,
+        "satuan": "kg"
+      },
+      {
+        "id_bahan": "ING_008",
+        "nama_bahan": "Tahu Putih",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "potong"
+      },
+      {
+        "id_bahan": "ING_011",
+        "nama_bahan": "Lontong",
+        "jumlah_per_porsi": 1.0,
+        "satuan": "buah"
+      }
+    ]
+  },
+  {
+    "id": "MENU_004",
+    "nama": "Es Teh Manis Segar",
+    "kategori": "Minuman",
+    "harga": 5000.0,
+    "status": "Tersedia",
+    "gambar_url": "https://images.unsplash.com/photo-1556679343-c7306c1976bc",
+    "deskripsi": "Es teh manis melati racikan segar pelepas dahaga.",
+    "resep_bahan": []
+  },
+  {
+    "id": "MENU_005",
+    "nama": "Es Jeruk Peras",
+    "kategori": "Minuman",
+    "harga": 7000.0,
+    "status": "Tersedia",
+    "gambar_url": "https://images.unsplash.com/photo-1613478223719-2ab802602423",
+    "deskripsi": "Perasan jeruk murni segar alami dengan tambahan es batu kristal.",
+    "resep_bahan": []
+  }
+]

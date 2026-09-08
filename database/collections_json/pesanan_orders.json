@@ -1,0 +1,91 @@
+[
+  {
+    "id": "ORD_20260826_0001",
+    "id_user": "User_03",
+    "nama_pelanggan": "Muhammad Farhan Aprilianto",
+    "hp_pelanggan": "085712345678",
+    "tipe_layanan": "delivery",
+    "metode_pembayaran": "qris",
+    "status": "completed",
+    "subtotal": 29000.0,
+    "pajak": 0.0,
+    "biaya_layanan": 1000.0,
+    "biaya_pengiriman": 5000.0,
+    "total": 35000.0,
+    "alamat_pengiriman": "Jl. Lenteng Agung Timur No. 45, Jagakarsa, Jakarta Selatan",
+    "latitude": -6.3325,
+    "longitude": 106.8335,
+    "catatan_khusus": "Tolong bumbunya dipisah, cabai 3 (sedang), kerupuk dibanyakin.",
+    "waktu_pesan": "2026-08-26T12:15:30.000Z",
+    "waktu_selesai": "2026-08-26T12:45:00.000Z",
+    "rating": 5.0,
+    "catatan_rating": "Gado-gadonya mantap banget, bumbu kacangnya gurih medok!",
+    "waktu_rating": "2026-08-26T13:00:15.000Z",
+    "bukti_pembayaran_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c",
+    "items": [
+      {
+        "id_menu": "MENU_001",
+        "nama_menu": "Gado-Gado Spesial Komplit + Lontong",
+        "harga_satuan": 22000.0,
+        "quantity": 1,
+        "catatan": "Pedas sedang",
+        "selected_toppings": [
+          {
+            "id_topping": "TOP_001",
+            "nama": "Ekstra Telur Rebus",
+            "harga": 4000.0
+          }
+        ],
+        "subtotal_item": 26000.0
+      },
+      {
+        "id_menu": "MENU_004",
+        "nama_menu": "Es Teh Manis Segar",
+        "harga_satuan": 5000.0,
+        "quantity": 1,
+        "catatan": "Manis sedang",
+        "selected_toppings": [],
+        "subtotal_item": 5000.0
+      }
+    ]
+  },
+  {
+    "id": "ORD_20260826_0002",
+    "id_user": "User_04",
+    "nama_pelanggan": "Budi Santoso",
+    "hp_pelanggan": "081388776655",
+    "tipe_layanan": "dineIn",
+    "metode_pembayaran": "cash",
+    "status": "completed",
+    "subtotal": 24000.0,
+    "pajak": 0.0,
+    "biaya_layanan": 0.0,
+    "biaya_pengiriman": 0.0,
+    "total": 24000.0,
+    "waktu_pesan": "2026-08-26T13:20:00.000Z",
+    "waktu_selesai": "2026-08-26T13:35:00.000Z",
+    "rating": 4.5,
+    "catatan_rating": "Pelayanan cepat dan rasa konsisten enak.",
+    "waktu_rating": "2026-08-26T13:50:00.000Z",
+    "items": [
+      {
+        "id_menu": "MENU_003",
+        "nama_menu": "Ketoprak Betawi Mantap",
+        "harga_satuan": 17000.0,
+        "quantity": 1,
+        "catatan": "Cabai 1 saja",
+        "selected_toppings": [],
+        "subtotal_item": 17000.0
+      },
+      {
+        "id_menu": "MENU_005",
+        "nama_menu": "Es Jeruk Peras",
+        "harga_satuan": 7000.0,
+        "quantity": 1,
+        "catatan": "",
+        "selected_toppings": [],
+        "subtotal_item": 7000.0
+      }
+    ]
+  }
+]

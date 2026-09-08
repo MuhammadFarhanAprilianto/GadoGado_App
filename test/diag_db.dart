@@ -8,10 +8,12 @@ void main() {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
     
-    final doc = await FirebaseFirestore.instance.collection('settings').doc('shop_status').get();
+    final snapshot = await FirebaseFirestore.instance.collection('bahan').get();
     print('==============================');
-    print('FIRESTORE SHOP STATUS DOCUMENT:');
-    print(doc.data());
+    print('FIRESTORE BAHAN COUNT: ${snapshot.docs.length}');
+    for (var d in snapshot.docs) {
+      print('DOC ID: ${d.id} => ${d.data()}');
+    }
     print('==============================');
   });
 }

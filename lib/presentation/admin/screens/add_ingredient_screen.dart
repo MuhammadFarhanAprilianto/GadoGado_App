@@ -4,6 +4,8 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/translator.dart';
 import '../../auth/viewmodels/auth_viewmodel.dart';
 import '../viewmodels/admin_view_model.dart';
+import '../../widgets/warung_logo.dart';
+import '../../widgets/responsive_layout.dart';
 
 class AddIngredientScreen extends StatefulWidget {
   const AddIngredientScreen({super.key});
@@ -41,7 +43,8 @@ class _AddIngredientScreenState extends State<AddIngredientScreen> {
     final authVM = context.watch<AuthViewModel>();
     final user = authVM.currentUser;
 
-    return Scaffold(
+    return ResponsiveLayout(
+      child: Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -50,15 +53,9 @@ class _AddIngredientScreenState extends State<AddIngredientScreen> {
           icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.primary, size: 20),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Row(
-          children: [
-            const Icon(Icons.restaurant_menu, color: AppColors.primary, size: 28),
-            const SizedBox(width: 8),
-            const Text(
-              'Warung Mpo Lemez',
-              style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.w900, fontSize: 24),
-            ),
-          ],
+        title: const Padding(
+          padding: EdgeInsets.only(left: 4.0),
+          child: WarungLogo(height: 38),
         ),
         actions: [
           Padding(
@@ -153,8 +150,9 @@ class _AddIngredientScreenState extends State<AddIngredientScreen> {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildLabel(String text) {
     return Padding(

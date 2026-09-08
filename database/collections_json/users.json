@@ -1,0 +1,38 @@
+[
+  {
+    "id": "User_01",
+    "uid": "auth_owner_mpo_lemez",
+    "nama": "Hj. Mpo Lemezz",
+    "email": "owner@gadogado.com",
+    "role": "owner",
+    "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    "hp": "081234567890"
+  },
+  {
+    "id": "User_02",
+    "uid": "auth_admin_kasir",
+    "nama": "Siti Nurhaliza (Staf Kasir & Dapur)",
+    "email": "admin@gadogado.com",
+    "role": "admin",
+    "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    "hp": "081298765432"
+  },
+  {
+    "id": "User_03",
+    "uid": "auth_customer_farhan",
+    "nama": "Muhammad Farhan Aprilianto",
+    "email": "farhan@gmail.com",
+    "role": "pelanggan",
+    "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde",
+    "hp": "085712345678"
+  },
+  {
+    "id": "User_04",
+    "uid": "auth_customer_budi",
+    "nama": "Budi Santoso",
+    "email": "budi.santoso@gmail.com",
+    "role": "pelanggan",
+    "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61",
+    "hp": "081388776655"
+  }
+]
